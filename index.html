@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="km">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
     <title>Wedding Invitation</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+          href="style.css">
 </head>
+
 
 <body>
 
     <main class="cover-page">
+
+
+        <!-- =========================
+             CANVA WEDDING COVER
+             ========================= -->
 
         <img
             id="guestCover"
@@ -18,14 +30,102 @@
             alt="Wedding Invitation"
         >
 
-        <!-- Button link will be added here -->
+
+        <!-- =========================
+             BUTTERFLIES
+             ========================= -->
+
+        <div class="butterfly butterfly-1">🦋</div>
+
+        <div class="butterfly butterfly-2">🦋</div>
+
+        <div class="butterfly butterfly-3">🦋</div>
+
+
+        <!-- =========================
+             FALLING PETALS
+             ========================= -->
+
+        <div class="petal petal-1">🌸</div>
+
+        <div class="petal petal-2">🌸</div>
+
+        <div class="petal petal-3">🌸</div>
+
+        <div class="petal petal-4">🌸</div>
+
+        <div class="petal petal-5">🌸</div>
+
+        <div class="petal petal-6">🌸</div>
+
+
+        <!-- =========================
+             SPARKLES
+             ========================= -->
+
+        <div class="sparkle sparkle-1">✦</div>
+
+        <div class="sparkle sparkle-2">✧</div>
+
+        <div class="sparkle sparkle-3">✦</div>
+
+        <div class="sparkle sparkle-4">✧</div>
+
+        <div class="sparkle sparkle-5">✦</div>
+
+        <div class="sparkle sparkle-6">✧</div>
+
+
+        <!-- =========================
+             OPEN INVITATION BUTTON
+             ========================= -->
+
         <a
             href="invitation.html"
             class="open-invitation"
             aria-label="បើកលិខិតអញ្ជើញ">
         </a>
 
+
     </main>
 
+
+    <!-- =========================
+         SELECT GUEST COVER
+         ========================= -->
+
+    <script>
+
+        const guests = {
+
+            guest1: "covers/guest1.png",
+
+            guest2: "covers/guest2.png"
+
+        };
+
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const guest =
+            params.get("guest");
+
+
+        const cover =
+            guests[guest] || guests.guest1;
+
+
+        document.getElementById(
+            "guestCover"
+        ).src = cover;
+
+    </script>
+
+
 </body>
+
 </html>
