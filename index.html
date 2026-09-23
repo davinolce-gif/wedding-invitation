@@ -30,102 +30,208 @@
             alt="Wedding Invitation"
         >
 
+<main class="cover-page">
 
-        <!-- =========================
-             BUTTERFLIES
-             ========================= -->
-
-        <div class="butterfly butterfly-1">🦋</div>
-
-        <div class="butterfly butterfly-2">🦋</div>
-
-        <div class="butterfly butterfly-3">🦋</div>
-
-
-        <!-- =========================
-             FALLING PETALS
-             ========================= -->
-
-        <div class="petal petal-1">🌸</div>
-
-        <div class="petal petal-2">🌸</div>
-
-        <div class="petal petal-3">🌸</div>
-
-        <div class="petal petal-4">🌸</div>
-
-        <div class="petal petal-5">🌸</div>
-
-        <div class="petal petal-6">🌸</div>
+    <!-- YOUR CANVA COVER -->
+    <img
+        id="guestCover"
+        class="cover-image"
+        src="covers/guest1.png"
+        alt="Wedding Invitation"
+    >
 
 
-        <!-- =========================
-             SPARKLES
-             ========================= -->
+    <!-- =====================================
+         FLYING BUTTERFLIES
+         ===================================== -->
 
-        <div class="sparkle sparkle-1">✦</div>
+    <div class="butterfly butterfly-1">
+        <svg viewBox="0 0 120 100" aria-hidden="true">
 
-        <div class="sparkle sparkle-2">✧</div>
+            <path
+                class="wing"
+                d="M60 48
+                   C35 5 5 15 12 42
+                   C18 65 42 65 60 55
+                   Z"
+            />
 
-        <div class="sparkle sparkle-3">✦</div>
+            <path
+                class="wing"
+                d="M60 48
+                   C85 5 115 15 108 42
+                   C102 65 78 65 60 55
+                   Z"
+            />
 
-        <div class="sparkle sparkle-4">✧</div>
+            <path
+                class="wing wing-inner"
+                d="M58 48
+                   C40 20 20 28 25 45
+                   C30 57 46 57 58 52
+                   Z"
+            />
 
-        <div class="sparkle sparkle-5">✦</div>
+            <path
+                class="wing wing-inner"
+                d="M62 48
+                   C80 20 100 28 95 45
+                   C90 57 74 57 62 52
+                   Z"
+            />
 
-        <div class="sparkle sparkle-6">✧</div>
+            <ellipse
+                class="body"
+                cx="60"
+                cy="52"
+                rx="4"
+                ry="19"
+            />
 
-
-        <!-- =========================
-             OPEN INVITATION BUTTON
-             ========================= -->
-
-        <a
-            href="invitation.html"
-            class="open-invitation"
-            aria-label="បើកលិខិតអញ្ជើញ">
-        </a>
-
-
-    </main>
-
-
-    <!-- =========================
-         SELECT GUEST COVER
-         ========================= -->
-
-    <script>
-
-        const guests = {
-
-            guest1: "covers/guest1.png",
-
-            guest2: "covers/guest2.png"
-
-        };
-
-
-        const params =
-            new URLSearchParams(
-                window.location.search
-            );
-
-
-        const guest =
-            params.get("guest");
+        </svg>
+    </div>
 
 
-        const cover =
-            guests[guest] || guests.guest1;
+    <div class="butterfly butterfly-2">
+        <svg viewBox="0 0 120 100" aria-hidden="true">
+
+            <path
+                class="wing"
+                d="M60 48
+                   C35 5 5 15 12 42
+                   C18 65 42 65 60 55
+                   Z"
+            />
+
+            <path
+                class="wing"
+                d="M60 48
+                   C85 5 115 15 108 42
+                   C102 65 78 65 60 55
+                   Z"
+            />
+
+            <path
+                class="wing wing-inner"
+                d="M58 48
+                   C40 20 20 28 25 45
+                   C30 57 46 57 58 52
+                   Z"
+            />
+
+            <path
+                class="wing wing-inner"
+                d="M62 48
+                   C80 20 100 28 95 45
+                   C90 57 74 57 62 52
+                   Z"
+            />
+
+            <ellipse
+                class="body"
+                cx="60"
+                cy="52"
+                rx="4"
+                ry="19"
+            />
+
+        </svg>
+    </div>
 
 
-        document.getElementById(
-            "guestCover"
-        ).src = cover;
+    <div class="butterfly butterfly-3">
+        <svg viewBox="0 0 120 100" aria-hidden="true">
 
-    </script>
+            <path
+                class="wing"
+                d="M60 48
+                   C35 5 5 15 12 42
+                   C18 65 42 65 60 55
+                   Z"
+            />
+
+            <path
+                class="wing"
+                d="M60 48
+                   C85 5 115 15 108 42
+                   C102 65 78 65 60 55
+                   Z"
+            />
+
+            <path
+                class="wing wing-inner"
+                d="M58 48
+                   C40 20 20 28 25 45
+                   C30 57 46 57 58 52
+                   Z"
+            />
+
+            <path
+                class="wing wing-inner"
+                d="M62 48
+                   C80 20 100 28 95 45
+                   C90 57 74 57 62 52
+                   Z"
+            />
+
+            <ellipse
+                class="body"
+                cx="60"
+                cy="52"
+                rx="4"
+                ry="19"
+            />
+
+        </svg>
+    </div>
 
 
-</body>
+    <!-- =====================================
+         FALLING PETALS
+         ===================================== -->
 
-</html>
+    <div class="petals">
+
+        <span class="petal p1"></span>
+        <span class="petal p2"></span>
+        <span class="petal p3"></span>
+        <span class="petal p4"></span>
+        <span class="petal p5"></span>
+        <span class="petal p6"></span>
+        <span class="petal p7"></span>
+        <span class="petal p8"></span>
+        <span class="petal p9"></span>
+        <span class="petal p10"></span>
+        <span class="petal p11"></span>
+        <span class="petal p12"></span>
+
+    </div>
+
+
+    <!-- =====================================
+         SPARKLES
+         ===================================== -->
+
+    <div class="sparkles">
+
+        <span class="sparkle s1">✦</span>
+        <span class="sparkle s2">✦</span>
+        <span class="sparkle s3">✧</span>
+        <span class="sparkle s4">✦</span>
+        <span class="sparkle s5">✧</span>
+        <span class="sparkle s6">✦</span>
+
+    </div>
+
+
+    <!-- =====================================
+         INVITATION BUTTON
+         ===================================== -->
+
+    <a
+        href="invitation.html"
+        class="open-invitation"
+        aria-label="បើកលិខិតអញ្ជើញ">
+    </a>
+
+</main>
