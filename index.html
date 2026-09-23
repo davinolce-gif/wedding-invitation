@@ -1,84 +1,42 @@
 <!DOCTYPE html>
 <html lang="km">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Wedding Invitation</title>
-
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #f8f1e7;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-
-    .invitation {
-      width: 100%;
-      max-width: 600px;
-      padding: 50px 25px;
-      box-sizing: border-box;
-    }
-
-    h1 {
-      color: #b8860b;
-      font-size: 32px;
-    }
-
-    #guestName {
-      color: #6b1e2b;
-      font-size: 28px;
-      margin: 25px 0;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 14px 25px;
-      background: #b8860b;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="invitation">
+    <main class="cover-page">
 
-    <h1>សូមគោរពអញ្ជើញ</h1>
+        <!-- Canva cover -->
+        <img id="guestCover" class="cover-image" alt="Wedding Invitation">
 
-    <div id="guestName">
-      លោកអ្នក និងក្រុមគ្រួសារ
-    </div>
+        <!-- Invisible button over Canva button -->
+        <a href="invitation.html"
+           class="open-invitation"
+           aria-label="បើកលិខិតអញ្ជើញ">
+        </a>
 
-    <p>
-      សូមអញ្ជើញចូលរួមក្នុងពិធីមង្គលការរបស់យើងខ្ញុំ
-    </p>
+    </main>
 
-    <a class="button" href="#details">
-      ចូលមើលការអញ្ជើញ
-    </a>
+    <script>
+        const guests = {
+            guest1: "covers/guest1.png",
+            guest2: "covers/guest2.png",
+            guest3: "covers/guest3.png",
+            guest4: "covers/guest4.png"
+        };
 
-  </div>
+        const params = new URLSearchParams(window.location.search);
+        const guest = params.get("guest");
 
-  <script>
+        const cover = guests[guest] || guests.guest1;
 
-    const params = new URLSearchParams(window.location.search);
-
-    const guest = params.get("guest");
-
-    if (guest) {
-      document.getElementById("guestName").textContent =
-        "លោក " + guest + " និងក្រុមគ្រួសារ";
-    }
-
-  </script>
+        document.getElementById("guestCover").src = cover;
+    </script>
 
 </body>
 </html>
