@@ -21,19 +21,34 @@ body {
     object-fit: cover;
     object-position: center;
 }
-
-.open-invitation {
-    animation: pulse 2s ease-in-out infinite;
+/* Cover entrance animation */
+.cover-image {
+    animation: coverAppear 1.5s ease-out;
 }
 
-@keyframes pulse {
+@keyframes coverAppear {
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Open button animation */
+.open-invitation {
+    animation: buttonPulse 2s ease-in-out infinite;
+}
+
+@keyframes buttonPulse {
     0%, 100% {
         transform: scale(1);
-        opacity: 1;
     }
 
     50% {
-        transform: scale(1.06);
-        opacity: 0.85;
+        transform: scale(1.08);
     }
 }
