@@ -11,32 +11,21 @@
 
     <main class="cover-page">
 
-        <!-- Canva cover -->
-        <img id="guestCover" class="cover-image" alt="Wedding Invitation">
+        <img
+            id="guestCover"
+            class="cover-image"
+            src="covers/guest1.png"
+            alt="Wedding Invitation"
+        >
 
-        <!-- Invisible button over Canva button -->
-        <a href="invitation.html"
-           class="open-invitation"
-           aria-label="បើកលិខិតអញ្ជើញ">
+        <!-- Button link will be added here -->
+        <a
+            href="invitation.html"
+            class="open-invitation"
+            aria-label="បើកលិខិតអញ្ជើញ">
         </a>
 
     </main>
-
-    <script>
-        const guests = {
-            guest1: "covers/guest1-songly.png",
-            guest2: "covers/guest2.png",
-            guest3: "covers/guest3.png",
-            guest4: "covers/guest4.png"
-        };
-
-        const params = new URLSearchParams(window.location.search);
-        const guest = params.get("guest");
-
-        const cover = guests[guest] || guests.guest1;
-
-        document.getElementById("guestCover").src = cover;
-    </script>
 
 </body>
 </html>
