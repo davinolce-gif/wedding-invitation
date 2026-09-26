@@ -1,257 +1,201 @@
+/* =========================================================
+   WEDDING INVITATION - COVER PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   BASIC PAGE RESET
+   ========================================================= */
+
 html,
 body {
+
     margin: 0;
+
     padding: 0;
+
     width: 100%;
+
     height: 100%;
+
+}
+
+
+body {
+
+    overflow: hidden;
+
     background: #f5f0e8;
+
 }
+
+
+/* =========================================================
+   COVER PAGE
+   ========================================================= */
 
 .cover-page {
+
     position: relative;
+
     width: 100%;
-    min-height: 100vh;
+
+    height: 100svh;
+
+    min-height: 100svh;
+
     overflow: hidden;
+
 }
+
+
+/* =========================================================
+   CANVA COVER IMAGE
+   ========================================================= */
 
 .cover-image {
-    display: block;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    object-position: center;
-}
-/* Cover entrance animation */
-.cover-image {
-    animation: coverAppear 1.5s ease-out;
-}
 
-@keyframes coverAppear {
-    from {
-        opacity: 0;
-        transform: scale(1.05);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Open button animation */
-.open-invitation {
-    animation: buttonPulse 2s ease-in-out infinite;
-}
-
-@keyframes buttonPulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.08);
-    }
-}
-/* =====================================================
-   WEDDING COVER ANIMATION
-   Elegant butterflies + falling petals
-   ===================================================== */
-
-
-/* -----------------------------------------------------
-   COVER
-   ----------------------------------------------------- */
-
-.cover-page {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
-}
-
-
-.cover-image {
-    display: block;
-    width: 100%;
-    height: 100vh;
-
-    object-fit: cover;
-    object-position: center;
-
-    animation: coverAppear 1.5s ease-out;
-}
-
-
-@keyframes coverAppear {
-
-    from {
-        opacity: 0;
-        transform: scale(1.03);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-}
-
-
-/* =====================================================
-   BUTTERFLIES
-   ===================================================== */
-
-.butterfly {
     position: absolute;
 
-    z-index: 8;
+    inset: 0;
 
-    width: 85px;
-    height: 70px;
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    z-index: 1;
+
+    animation: coverAppear 1.5s ease-out;
+
+}
+
+
+/* Soft opening */
+
+@keyframes coverAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform: scale(1.03);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   BUTTERFLIES
+   ========================================================= */
+
+.flying-butterfly {
+
+    position: absolute;
+
+    z-index: 10;
+
+    display: block;
+
+    width: 75px;
+
+    height: auto;
 
     pointer-events: none;
 
-    filter:
-        drop-shadow(0 0 5px rgba(255, 180, 210, 0.9))
-        drop-shadow(0 0 12px rgba(255, 220, 240, 0.8));
+    user-select: none;
 
 }
 
 
-/* Butterfly SVG */
-
-.butterfly svg {
-    width: 100%;
-    height: 100%;
-}
-
-
-/* Main wings */
-
-.butterfly .wing {
-
-    fill: rgba(255, 170, 205, 0.35);
-
-    stroke: rgba(255, 245, 250, 0.95);
-
-    stroke-width: 2;
-
-}
-
-
-/* Inner wing detail */
-
-.butterfly .wing-inner {
-
-    fill: rgba(255, 205, 225, 0.25);
-
-    stroke: rgba(255, 240, 250, 0.8);
-
-    stroke-width: 1;
-
-}
-
-
-/* Butterfly body */
-
-.butterfly .body {
-
-    fill: #fff7fa;
-
-    stroke: #e8a6c2;
-
-    stroke-width: 1;
-
-}
-
-
-/* =====================================================
+/* =========================================================
    BUTTERFLY 1
-   Starts around lower-left flowers
-   and flies upward toward center.
-   ===================================================== */
+   ========================================================= */
 
 .butterfly-1 {
 
-    left: 4%;
+    left: 3%;
 
     bottom: 18%;
 
     animation:
-        butterflyPath1
-        13s
+
+        butterflyFlight1
+
+        14s
+
         ease-in-out
+
         infinite;
 
 }
 
 
-/* =====================================================
+/* =========================================================
    BUTTERFLY 2
-   Starts around right side
-   ===================================================== */
+   ========================================================= */
 
 .butterfly-2 {
 
-    width: 65px;
-    height: 55px;
+    left: 72%;
 
-    right: 5%;
-
-    bottom: 32%;
-
-    animation:
-        butterflyPath2
-        16s
-        ease-in-out
-        infinite;
-
-    animation-delay: 3s;
-
-}
-
-
-/* =====================================================
-   BUTTERFLY 3
-   Smaller butterfly
-   ===================================================== */
-
-.butterfly-3 {
+    bottom: 28%;
 
     width: 55px;
-    height: 48px;
-
-    left: 30%;
-
-    bottom: 8%;
 
     animation:
-        butterflyPath3
-        18s
+
+        butterflyFlight2
+
+        17s
+
         ease-in-out
+
         infinite;
 
-    animation-delay: 6s;
+    animation-delay: 5s;
 
 }
 
 
-/* -----------------------------------------------------
-   BUTTERFLY MOVEMENT 1
-   ----------------------------------------------------- */
+/* =========================================================
+   BUTTERFLY FLIGHT 1
+   ========================================================= */
 
-@keyframes butterflyPath1 {
+@keyframes butterflyFlight1 {
+
+    /* Start */
 
     0% {
 
         transform:
-            translate(0, 0)
-            rotate(-8deg)
+
+            translate3d(0, 0, 0)
+
+            rotate(-5deg)
+
             scale(0.75);
 
         opacity: 0;
 
     }
+
+
+    /* Appear */
 
     8% {
 
@@ -259,49 +203,94 @@ body {
 
     }
 
-    25% {
+
+    /* Move upward */
+
+    20% {
 
         transform:
-            translate(45px, -120px)
-            rotate(8deg)
+
+            translate3d(45px, -100px, 0)
+
+            rotate(7deg)
+
             scale(0.9);
 
     }
 
-    45% {
+
+    /* Drift right */
+
+    38% {
 
         transform:
-            translate(130px, -220px)
-            rotate(-7deg)
+
+            translate3d(120px, -170px, 0)
+
+            rotate(-6deg)
+
             scale(1);
 
     }
 
-    65% {
+
+    /* Drift left */
+
+    55% {
 
         transform:
-            translate(210px, -140px)
-            rotate(8deg)
+
+            translate3d(75px, -270px, 0)
+
+            rotate(6deg)
+
+            scale(1.05);
+
+    }
+
+
+    /* Drift right */
+
+    72% {
+
+        transform:
+
+            translate3d(190px, -350px, 0)
+
+            rotate(-7deg)
+
             scale(0.95);
 
     }
 
-    85% {
+
+    /* Continue upward */
+
+    88% {
 
         transform:
-            translate(280px, -300px)
-            rotate(-5deg)
+
+            translate3d(270px, -450px, 0)
+
+            rotate(5deg)
+
             scale(0.85);
 
         opacity: 1;
 
     }
 
+
+    /* Disappear */
+
     100% {
 
         transform:
-            translate(350px, -430px)
-            rotate(5deg)
+
+            translate3d(350px, -560px, 0)
+
+            rotate(-5deg)
+
             scale(0.7);
 
         opacity: 0;
@@ -311,22 +300,30 @@ body {
 }
 
 
-/* -----------------------------------------------------
-   BUTTERFLY MOVEMENT 2
-   ----------------------------------------------------- */
+/* =========================================================
+   BUTTERFLY FLIGHT 2
+   ========================================================= */
 
-@keyframes butterflyPath2 {
+@keyframes butterflyFlight2 {
+
+    /* Start */
 
     0% {
 
         transform:
-            translate(0, 0)
-            rotate(8deg)
-            scale(0.8);
+
+            translate3d(0, 0, 0)
+
+            rotate(5deg)
+
+            scale(0.7);
 
         opacity: 0;
 
     }
+
+
+    /* Appear */
 
     10% {
 
@@ -334,50 +331,80 @@ body {
 
     }
 
-    30% {
+
+    /* Move left */
+
+    28% {
 
         transform:
-            translate(-80px, -100px)
-            rotate(-8deg)
-            scale(1);
 
-    }
+            translate3d(-70px, -100px, 0)
 
-    50% {
+            rotate(-7deg)
 
-        transform:
-            translate(-150px, -210px)
-            rotate(6deg)
             scale(0.9);
 
     }
 
-    70% {
+
+    /* Continue */
+
+    45% {
 
         transform:
-            translate(-230px, -150px)
-            rotate(-6deg)
+
+            translate3d(-150px, -190px, 0)
+
+            rotate(6deg)
+
             scale(1);
 
     }
 
-    90% {
+
+    /* Move right */
+
+    63% {
 
         transform:
-            translate(-300px, -300px)
-            rotate(8deg)
-            scale(0.8);
+
+            translate3d(-90px, -300px, 0)
+
+            rotate(-7deg)
+
+            scale(0.9);
+
+    }
+
+
+    /* Continue upward */
+
+    82% {
+
+        transform:
+
+            translate3d(-220px, -410px, 0)
+
+            rotate(6deg)
+
+            scale(0.75);
 
         opacity: 1;
 
     }
 
+
+    /* Disappear */
+
     100% {
 
         transform:
-            translate(-380px, -420px)
+
+            translate3d(-330px, -530px, 0)
+
             rotate(-5deg)
-            scale(0.65);
+
+            scale(0.6);
 
         opacity: 0;
 
@@ -386,210 +413,451 @@ body {
 }
 
 
-/* -----------------------------------------------------
-   BUTTERFLY MOVEMENT 3
-   ----------------------------------------------------- */
-
-@keyframes butterflyPath3 {
-
-    0% {
-
-        transform:
-            translate(0, 0)
-            rotate(-5deg);
-
-        opacity: 0;
-
-    }
-
-    10% {
-
-        opacity: 1;
-
-    }
-
-    30% {
-
-        transform:
-            translate(70px, -100px)
-            rotate(8deg);
-
-    }
-
-    50% {
-
-        transform:
-            translate(20px, -220px)
-            rotate(-8deg);
-
-    }
-
-    70% {
-
-        transform:
-            translate(130px, -300px)
-            rotate(7deg);
-
-    }
-
-    90% {
-
-        transform:
-            translate(190px, -420px)
-            rotate(-5deg);
-
-        opacity: 1;
-
-    }
-
-    100% {
-
-        transform:
-            translate(250px, -500px)
-            rotate(5deg);
-
-        opacity: 0;
-
-    }
-
-}
-
-
-/* =====================================================
+/* =========================================================
    FALLING PETALS
-   ===================================================== */
+   ========================================================= */
 
-.petals {
+.falling-petal {
+
     position: absolute;
 
-    inset: 0;
+    top: -60px;
 
-    z-index: 7;
+    z-index: 9;
+
+    display: block;
+
+    width: 28px;
+
+    height: auto;
 
     pointer-events: none;
 
-}
-
-
-/* Individual petal */
-
-.petal {
-
-    position: absolute;
-
-    top: -40px;
-
-    width: 15px;
-    height: 23px;
-
-    border-radius:
-        70% 30% 70% 30%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffb5ca,
-            #f45d87
-        );
-
-    box-shadow:
-        0 2px 5px rgba(255, 100, 140, 0.25);
+    user-select: none;
 
     opacity: 0;
 
 }
 
 
-/* Petal positions and speeds */
+/* =========================================================
+   PETAL 1
+   ========================================================= */
 
-.p1 {
-    left: 5%;
-    animation: petalFall 8s linear infinite;
+.petal-1 {
+
+    left: 3%;
+
+    animation:
+
+        petalFall1
+
+        10s
+
+        linear
+
+        infinite;
+
 }
 
-.p2 {
-    left: 14%;
-    animation: petalFall 11s linear infinite;
+
+/* =========================================================
+   PETAL 2
+   ========================================================= */
+
+.petal-2 {
+
+    left: 20%;
+
+    width: 22px;
+
+    animation:
+
+        petalFall2
+
+        12s
+
+        linear
+
+        infinite;
+
     animation-delay: 2s;
+
 }
 
-.p3 {
-    left: 25%;
-    animation: petalFall 9s linear infinite;
+
+/* =========================================================
+   PETAL 3
+   ========================================================= */
+
+.petal-3 {
+
+    left: 38%;
+
+    width: 27px;
+
+    animation:
+
+        petalFall3
+
+        9s
+
+        linear
+
+        infinite;
+
     animation-delay: 4s;
+
 }
 
-.p4 {
-    left: 36%;
-    animation: petalFall 12s linear infinite;
+
+/* =========================================================
+   PETAL 4
+   ========================================================= */
+
+.petal-4 {
+
+    left: 57%;
+
+    width: 20px;
+
+    animation:
+
+        petalFall4
+
+        11s
+
+        linear
+
+        infinite;
+
     animation-delay: 1s;
+
 }
 
-.p5 {
-    left: 47%;
-    animation: petalFall 10s linear infinite;
+
+/* =========================================================
+   PETAL 5
+   ========================================================= */
+
+.petal-5 {
+
+    left: 76%;
+
+    width: 25px;
+
+    animation:
+
+        petalFall5
+
+        13s
+
+        linear
+
+        infinite;
+
     animation-delay: 5s;
+
 }
 
-.p6 {
-    left: 58%;
-    animation: petalFall 8s linear infinite;
-    animation-delay: 3s;
-}
 
-.p7 {
-    left: 68%;
-    animation: petalFall 11s linear infinite;
-    animation-delay: 6s;
-}
+/* =========================================================
+   PETAL 6
+   ========================================================= */
 
-.p8 {
-    left: 77%;
-    animation: petalFall 9s linear infinite;
-    animation-delay: 1.5s;
-}
+.petal-6 {
 
-.p9 {
-    left: 86%;
-    animation: petalFall 12s linear infinite;
-    animation-delay: 4s;
-}
+    left: 92%;
 
-.p10 {
-    left: 94%;
-    animation: petalFall 10s linear infinite;
+    width: 21px;
+
+    animation:
+
+        petalFall6
+
+        10s
+
+        linear
+
+        infinite;
+
     animation-delay: 7s;
-}
 
-.p11 {
-    left: 31%;
-    animation: petalFall 13s linear infinite;
-    animation-delay: 8s;
-}
-
-.p12 {
-    left: 73%;
-    animation: petalFall 14s linear infinite;
-    animation-delay: 9s;
 }
 
 
-/* -----------------------------------------------------
-   PETAL FALLING MOTION
-   ----------------------------------------------------- */
+/* =========================================================
+   PETAL FALL 1
+   ========================================================= */
 
-@keyframes petalFall {
+@keyframes petalFall1 {
 
     0% {
 
         transform:
-            translate3d(0, -50px, 0)
+
+            translate3d(0, -60px, 0)
+
             rotate(0deg)
+
             scale(0.7);
 
         opacity: 0;
 
     }
+
+
+    10% {
+
+        opacity: 0.9;
+
+    }
+
+
+    30% {
+
+        transform:
+
+            translate3d(45px, 30vh, 0)
+
+            rotate(110deg)
+
+            scale(1);
+
+    }
+
+
+    55% {
+
+        transform:
+
+            translate3d(-25px, 55vh, 0)
+
+            rotate(220deg)
+
+            scale(0.9);
+
+    }
+
+
+    80% {
+
+        transform:
+
+            translate3d(40px, 80vh, 0)
+
+            rotate(320deg)
+
+            scale(1.05);
+
+    }
+
+
+    100% {
+
+        transform:
+
+            translate3d(-20px, 110vh, 0)
+
+            rotate(450deg)
+
+            scale(0.7);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   PETAL FALL 2
+   ========================================================= */
+
+@keyframes petalFall2 {
+
+    0% {
+
+        transform:
+
+            translate3d(0, -60px, 0)
+
+            rotate(20deg)
+
+            scale(0.8);
+
+        opacity: 0;
+
+    }
+
+
+    10% {
+
+        opacity: 0.8;
+
+    }
+
+
+    30% {
+
+        transform:
+
+            translate3d(-35px, 30vh, 0)
+
+            rotate(120deg)
+
+            scale(1);
+
+    }
+
+
+    55% {
+
+        transform:
+
+            translate3d(45px, 55vh, 0)
+
+            rotate(230deg)
+
+            scale(0.9);
+
+    }
+
+
+    80% {
+
+        transform:
+
+            translate3d(-30px, 80vh, 0)
+
+            rotate(330deg)
+
+            scale(1.05);
+
+    }
+
+
+    100% {
+
+        transform:
+
+            translate3d(30px, 110vh, 0)
+
+            rotate(460deg)
+
+            scale(0.7);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   PETAL FALL 3
+   ========================================================= */
+
+@keyframes petalFall3 {
+
+    0% {
+
+        transform:
+
+            translate3d(0, -60px, 0)
+
+            rotate(0deg)
+
+            scale(0.7);
+
+        opacity: 0;
+
+    }
+
+
+    10% {
+
+        opacity: 0.9;
+
+    }
+
+
+    25% {
+
+        transform:
+
+            translate3d(30px, 25vh, 0)
+
+            rotate(100deg)
+
+            scale(1);
+
+    }
+
+
+    50% {
+
+        transform:
+
+            translate3d(-45px, 50vh, 0)
+
+            rotate(210deg)
+
+            scale(0.85);
+
+    }
+
+
+    75% {
+
+        transform:
+
+            translate3d(30px, 75vh, 0)
+
+            rotate(300deg)
+
+            scale(1);
+
+    }
+
+
+    100% {
+
+        transform:
+
+            translate3d(-30px, 110vh, 0)
+
+            rotate(450deg)
+
+            scale(0.7);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   PETAL FALL 4
+   ========================================================= */
+
+@keyframes petalFall4 {
+
+    0% {
+
+        transform:
+
+            translate3d(0, -60px, 0)
+
+            rotate(10deg)
+
+            scale(0.8);
+
+        opacity: 0;
+
+    }
+
 
     10% {
 
@@ -597,49 +865,54 @@ body {
 
     }
 
-    25% {
+
+    30% {
 
         transform:
-            translate3d(35px, 25vh, 0)
-            rotate(100deg)
+
+            translate3d(-40px, 30vh, 0)
+
+            rotate(120deg)
+
             scale(1);
 
     }
 
-    45% {
+
+    55% {
 
         transform:
-            translate3d(-30px, 45vh, 0)
-            rotate(190deg)
+
+            translate3d(35px, 55vh, 0)
+
+            rotate(240deg)
+
             scale(0.9);
 
     }
 
-    65% {
+
+    80% {
 
         transform:
-            translate3d(45px, 65vh, 0)
-            rotate(280deg)
-            scale(1.05);
+
+            translate3d(-35px, 80vh, 0)
+
+            rotate(340deg)
+
+            scale(1);
 
     }
 
-    85% {
-
-        transform:
-            translate3d(-20px, 85vh, 0)
-            rotate(350deg)
-            scale(0.85);
-
-        opacity: 0.7;
-
-    }
 
     100% {
 
         transform:
-            translate3d(30px, 110vh, 0)
-            rotate(450deg)
+
+            translate3d(20px, 110vh, 0)
+
+            rotate(460deg)
+
             scale(0.7);
 
         opacity: 0;
@@ -649,185 +922,288 @@ body {
 }
 
 
-/* =====================================================
-   SPARKLES
-   ===================================================== */
+/* =========================================================
+   PETAL FALL 5
+   ========================================================= */
 
-.sparkles {
-
-    position: absolute;
-
-    inset: 0;
-
-    z-index: 9;
-
-    pointer-events: none;
-
-}
-
-
-.sparkle {
-
-    position: absolute;
-
-    color: #fff8dc;
-
-    font-size: 18px;
-
-    text-shadow:
-        0 0 5px white,
-        0 0 12px #ffe7a0,
-        0 0 20px #ffd36a;
-
-    animation:
-        sparkleTwinkle
-        2.5s
-        ease-in-out
-        infinite;
-
-}
-
-
-.s1 {
-    left: 18%;
-    top: 20%;
-}
-
-.s2 {
-    left: 78%;
-    top: 22%;
-    animation-delay: .7s;
-}
-
-.s3 {
-    left: 30%;
-    top: 40%;
-    animation-delay: 1.2s;
-}
-
-.s4 {
-    left: 67%;
-    top: 48%;
-    animation-delay: .3s;
-}
-
-.s5 {
-    left: 45%;
-    top: 28%;
-    animation-delay: 1.7s;
-}
-
-.s6 {
-    left: 84%;
-    top: 65%;
-    animation-delay: 1s;
-}
-
-
-@keyframes sparkleTwinkle {
+@keyframes petalFall5 {
 
     0% {
 
+        transform:
+
+            translate3d(0, -60px, 0)
+
+            rotate(0deg)
+
+            scale(0.75);
+
         opacity: 0;
 
-        transform:
-            scale(.3)
-            rotate(0deg);
+    }
+
+
+    10% {
+
+        opacity: 0.9;
 
     }
 
-    40% {
 
-        opacity: 1;
+    30% {
 
         transform:
-            scale(1.2)
-            rotate(45deg);
+
+            translate3d(50px, 30vh, 0)
+
+            rotate(120deg)
+
+            scale(1);
 
     }
 
-    70% {
 
-        opacity: .4;
+    55% {
 
         transform:
-            scale(.7)
-            rotate(90deg);
+
+            translate3d(-40px, 55vh, 0)
+
+            rotate(230deg)
+
+            scale(0.9);
 
     }
+
+
+    80% {
+
+        transform:
+
+            translate3d(40px, 80vh, 0)
+
+            rotate(330deg)
+
+            scale(1.05);
+
+    }
+
 
     100% {
 
-        opacity: 0;
-
         transform:
-            scale(.3)
-            rotate(180deg);
+
+            translate3d(-25px, 110vh, 0)
+
+            rotate(460deg)
+
+            scale(0.7);
+
+        opacity: 0;
 
     }
 
 }
 
 
-/* =====================================================
+/* =========================================================
+   PETAL FALL 6
+   ========================================================= */
+
+@keyframes petalFall6 {
+
+    0% {
+
+        transform:
+
+            translate3d(0, -60px, 0)
+
+            rotate(0deg)
+
+            scale(0.8);
+
+        opacity: 0;
+
+    }
+
+
+    10% {
+
+        opacity: 0.85;
+
+    }
+
+
+    30% {
+
+        transform:
+
+            translate3d(-40px, 30vh, 0)
+
+            rotate(110deg)
+
+            scale(1);
+
+    }
+
+
+    55% {
+
+        transform:
+
+            translate3d(35px, 55vh, 0)
+
+            rotate(220deg)
+
+            scale(0.9);
+
+    }
+
+
+    80% {
+
+        transform:
+
+            translate3d(-30px, 80vh, 0)
+
+            rotate(330deg)
+
+            scale(1.05);
+
+    }
+
+
+    100% {
+
+        transform:
+
+            translate3d(20px, 110vh, 0)
+
+            rotate(450deg)
+
+            scale(0.7);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
    OPEN INVITATION BUTTON
-   ===================================================== */
+   ========================================================= */
 
 .open-invitation {
 
-    z-index: 20;
+    position: absolute;
+
+    left: 40%;
+
+    top: 75%;
+
+    width: 20%;
+
+    height: 6%;
+
+    z-index: 30;
+
+    cursor: pointer;
+
+    display: block;
 
     animation:
+
         buttonPulse
+
         2s
+
         ease-in-out
+
         infinite;
 
 }
 
+
+/* Button pulse */
 
 @keyframes buttonPulse {
 
     0%,
     100% {
+
         transform: scale(1);
+
     }
 
     50% {
+
         transform: scale(1.05);
+
     }
 
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBILE
-   ===================================================== */
+   ========================================================= */
 
 @media (max-width: 600px) {
 
-    .butterfly {
-        transform-origin: center;
+    .flying-butterfly {
+
+        width: 65px;
+
     }
 
-    .butterfly-1 {
-        width: 75px;
-        height: 62px;
-    }
 
     .butterfly-2 {
-        width: 58px;
-        height: 50px;
-    }
 
-    .butterfly-3 {
         width: 48px;
-        height: 42px;
+
     }
 
-    .petal {
-        width: 12px;
-        height: 19px;
+
+    .falling-petal {
+
+        width: 24px;
+
+    }
+
+
+    .petal-2 {
+
+        width: 19px;
+
+    }
+
+
+    .petal-3 {
+
+        width: 23px;
+
+    }
+
+
+    .petal-4 {
+
+        width: 18px;
+
+    }
+
+
+    .petal-5 {
+
+        width: 22px;
+
+    }
+
+
+    .petal-6 {
+
+        width: 19px;
+
     }
 
 }
