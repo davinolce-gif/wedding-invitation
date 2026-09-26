@@ -306,7 +306,118 @@
         aria-hidden="true"
     >
 
+<script>
 
+const photos = [
+    "photos/photo1.jpg",
+    "photos/photo2.jpg",
+    "photos/photo3.jpg",
+    "photos/photo4.jpg"
+];
+
+let currentPhoto = 0;
+
+
+/* OPEN PHOTO */
+
+function openPhoto(index) {
+
+    currentPhoto = index;
+
+    document.getElementById("largePhoto").src =
+        photos[currentPhoto];
+
+    document
+        .getElementById("photoViewer")
+        .classList.add("active");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+/* CLOSE PHOTO */
+
+function closePhoto(event) {
+
+    if (
+        event &&
+        event.target !== document.getElementById("photoViewer")
+    ) {
+        return;
+    }
+
+    document
+        .getElementById("photoViewer")
+        .classList.remove("active");
+
+    document.body.style.overflow = "";
+}
+
+
+/* NEXT PHOTO */
+
+function nextPhoto(event) {
+
+    if (event) {
+        event.stopPropagation();
+    }
+
+    currentPhoto++;
+
+    if (currentPhoto >= photos.length) {
+        currentPhoto = 0;
+    }
+
+    document.getElementById("largePhoto").src =
+        photos[currentPhoto];
+}
+
+
+/* PREVIOUS PHOTO */
+
+function previousPhoto(event) {
+
+    if (event) {
+        event.stopPropagation();
+    }
+
+    currentPhoto--;
+
+    if (currentPhoto < 0) {
+        currentPhoto = photos.length - 1;
+    }
+
+    document.getElementById("largePhoto").src =
+        photos[currentPhoto];
+}
+
+
+/* KEYBOARD */
+
+document.addEventListener("keydown", function(event) {
+
+    const viewer =
+        document.getElementById("photoViewer");
+
+    if (!viewer.classList.contains("active")) {
+        return;
+    }
+
+    if (event.key === "Escape") {
+        closePhoto();
+    }
+
+    if (event.key === "ArrowRight") {
+        nextPhoto();
+    }
+
+    if (event.key === "ArrowLeft") {
+        previousPhoto();
+    }
+
+});
+
+</script>
 </body>
 
 </html>
