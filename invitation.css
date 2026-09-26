@@ -632,3 +632,238 @@ body {
         transform: translateX(30px) rotate(420deg);
     }
 }
+/* =========================================
+   PRE-WEDDING PHOTO GALLERY
+   ========================================= */
+
+.prewedding-section {
+    position: relative;
+
+    width: 100%;
+
+    padding: 50px 20px;
+
+    box-sizing: border-box;
+
+    z-index: 2;
+}
+
+
+/* PHOTO GRID */
+
+.prewedding-gallery {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+
+/* PHOTO */
+
+.gallery-photo {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    object-fit: cover;
+
+    transition: transform 0.25s ease;
+}
+
+
+/* Small touch animation */
+
+.gallery-photo:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   FULL-SCREEN PHOTO VIEWER
+   ========================================= */
+
+.photo-viewer {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.78);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 100;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+}
+
+
+/* Show viewer */
+
+.photo-viewer.active {
+    display: flex;
+}
+
+
+/* =========================================
+   LARGE PHOTO
+   ========================================= */
+
+.large-photo {
+    display: block;
+
+    max-width: 90vw;
+    max-height: 85vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+   ========================================= */
+
+.photo-close {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    color: white;
+
+    font-size: 32px;
+
+    line-height: 40px;
+
+    cursor: pointer;
+
+    z-index: 110;
+}
+
+
+/* =========================================
+   LEFT / RIGHT ARROWS
+   ========================================= */
+
+.photo-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    color: white;
+
+    font-size: 42px;
+
+    line-height: 40px;
+
+    cursor: pointer;
+
+    z-index: 110;
+}
+
+
+.photo-prev {
+    left: 15px;
+}
+
+
+.photo-next {
+    right: 15px;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .prewedding-gallery {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 8px;
+    }
+
+
+    .large-photo {
+        max-width: 88vw;
+        max-height: 80vh;
+    }
+
+
+    .photo-close {
+        top: 15px;
+        right: 15px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 30px;
+    }
+
+
+    .photo-arrow {
+        width: 42px;
+        height: 42px;
+
+        font-size: 36px;
+    }
+
+
+    .photo-prev {
+        left: 8px;
+    }
+
+
+    .photo-next {
+        right: 8px;
+    }
+
+}
