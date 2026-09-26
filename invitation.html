@@ -132,25 +132,23 @@
         class="page2-content"
         alt="Wedding invitation information"
     >
-    <!-- =========================================
-     PRE-WEDDING PHOTO GALLERY
-     ========================================= -->
+  <!-- PRE-WEDDING PHOTO GALLERY -->
 
 <section class="prewedding-section">
 
-    <!-- PHOTO 1 + PHOTO 2 -->
+    <!-- PHOTO 1 + 2 -->
     <div class="photo-row">
 
         <img
             src="photos/photo1.jpg"
-            class="photo-vertical"
+            class="gallery-photo"
             onclick="openPhoto(0)"
             alt="Pre-wedding photo 1"
         >
 
         <img
             src="photos/photo2.jpg"
-            class="photo-vertical"
+            class="gallery-photo"
             onclick="openPhoto(1)"
             alt="Pre-wedding photo 2"
         >
@@ -163,6 +161,7 @@
 
         <img
             src="photos/photo3.jpg"
+            class="gallery-photo"
             onclick="openPhoto(2)"
             alt="Pre-wedding photo 3"
         >
@@ -170,19 +169,19 @@
     </div>
 
 
-    <!-- PHOTO 4 + PHOTO 5 -->
+    <!-- PHOTO 4 + 5 -->
     <div class="photo-row">
 
         <img
             src="photos/photo4.jpg"
-            class="photo-vertical"
+            class="gallery-photo"
             onclick="openPhoto(3)"
             alt="Pre-wedding photo 4"
         >
 
         <img
             src="photos/photo5.jpg"
-            class="photo-vertical"
+            class="gallery-photo"
             onclick="openPhoto(4)"
             alt="Pre-wedding photo 5"
         >
@@ -195,6 +194,7 @@
 
         <img
             src="photos/photo6.jpg"
+            class="gallery-photo"
             onclick="openPhoto(5)"
             alt="Pre-wedding photo 6"
         >
@@ -202,19 +202,19 @@
     </div>
 
 
-    <!-- PHOTO 7 + PHOTO 8 -->
+    <!-- PHOTO 7 + 8 -->
     <div class="photo-row">
 
         <img
             src="photos/photo7.jpg"
-            class="photo-vertical"
+            class="gallery-photo"
             onclick="openPhoto(6)"
             alt="Pre-wedding photo 7"
         >
 
         <img
             src="photos/photo8.jpg"
-            class="photo-vertical"
+            class="gallery-photo"
             onclick="openPhoto(7)"
             alt="Pre-wedding photo 8"
         >
@@ -227,6 +227,7 @@
 
         <img
             src="photos/photo9.jpg"
+            class="gallery-photo"
             onclick="openPhoto(8)"
             alt="Pre-wedding photo 9"
         >
@@ -234,19 +235,19 @@
     </div>
 
 
-    <!-- PHOTO 10 + PHOTO 11 -->
+    <!-- PHOTO 10 + 11 -->
     <div class="photo-row">
 
         <img
             src="photos/photo10.jpg"
-            class="photo-vertical"
+            class="gallery-photo"
             onclick="openPhoto(9)"
             alt="Pre-wedding photo 10"
         >
 
         <img
             src="photos/photo11.jpg"
-            class="photo-vertical"
+            class="gallery-photo"
             onclick="openPhoto(10)"
             alt="Pre-wedding photo 11"
         >
@@ -257,24 +258,22 @@
 
 
 <!-- =========================================
-     FULL SCREEN PHOTO VIEWER
+     PHOTO PREVIEW
      ========================================= -->
 
 <div id="photoViewer" class="photo-viewer">
 
     <button
+        type="button"
         class="photo-close"
         onclick="closePhoto()"
-    >
-        ×
-    </button>
+    >×</button>
 
     <button
-        class="photo-arrow photo-prev"
-        onclick="previousPhoto(event)"
-    >
-        ‹
-    </button>
+        type="button"
+        class="photo-prev"
+        onclick="previousPhoto()"
+    >‹</button>
 
     <img
         id="largePhoto"
@@ -284,140 +283,9 @@
     >
 
     <button
-        class="photo-arrow photo-next"
-        onclick="nextPhoto(event)"
-    >
-        ›
-    </button>
+        type="button"
+        class="photo-next"
+        onclick="nextPhoto()"
+    >›</button>
 
 </div>
-
-</main>
-
-
-    <!-- ==================================================
-         FIXED FOREGROUND FLOWERS / LAMPS
-         ================================================== -->
-
-    <img
-        src="foreground.png"
-        class="fixed-foreground"
-        alt=""
-        aria-hidden="true"
-    >
-
-<script>
-
-const photos = [
-    "photos/photo1.jpg",
-    "photos/photo2.jpg",
-    "photos/photo3.jpg",
-    "photos/photo4.jpg"
-];
-
-let currentPhoto = 0;
-
-
-/* OPEN PHOTO */
-
-function openPhoto(index) {
-
-    currentPhoto = index;
-
-    document.getElementById("largePhoto").src =
-        photos[currentPhoto];
-
-    document
-        .getElementById("photoViewer")
-        .classList.add("active");
-
-    document.body.style.overflow = "hidden";
-}
-
-
-/* CLOSE PHOTO */
-
-function closePhoto(event) {
-
-    if (
-        event &&
-        event.target !== document.getElementById("photoViewer")
-    ) {
-        return;
-    }
-
-    document
-        .getElementById("photoViewer")
-        .classList.remove("active");
-
-    document.body.style.overflow = "";
-}
-
-
-/* NEXT PHOTO */
-
-function nextPhoto(event) {
-
-    if (event) {
-        event.stopPropagation();
-    }
-
-    currentPhoto++;
-
-    if (currentPhoto >= photos.length) {
-        currentPhoto = 0;
-    }
-
-    document.getElementById("largePhoto").src =
-        photos[currentPhoto];
-}
-
-
-/* PREVIOUS PHOTO */
-
-function previousPhoto(event) {
-
-    if (event) {
-        event.stopPropagation();
-    }
-
-    currentPhoto--;
-
-    if (currentPhoto < 0) {
-        currentPhoto = photos.length - 1;
-    }
-
-    document.getElementById("largePhoto").src =
-        photos[currentPhoto];
-}
-
-
-/* KEYBOARD */
-
-document.addEventListener("keydown", function(event) {
-
-    const viewer =
-        document.getElementById("photoViewer");
-
-    if (!viewer.classList.contains("active")) {
-        return;
-    }
-
-    if (event.key === "Escape") {
-        closePhoto();
-    }
-
-    if (event.key === "ArrowRight") {
-        nextPhoto();
-    }
-
-    if (event.key === "ArrowLeft") {
-        previousPhoto();
-    }
-
-});
-
-</script>
-</body>
-
-</html>
