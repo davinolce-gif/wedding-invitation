@@ -632,128 +632,142 @@ body {
         transform: translateX(30px) rotate(420deg);
     }
 }
-<!-- =========================================
-     PRE-WEDDING PHOTO GALLERY
-     ========================================= -->
+/* =========================================
+   PRE-WEDDING PHOTO GALLERY
+   ========================================= */
 
-<section class="prewedding-section">
+.prewedding-section {
+    position: relative;
 
-    <!-- PHOTO 1 + PHOTO 2 -->
-    <div class="photo-row">
+    width: 100%;
+    max-width: 520px;
 
-        <img
-            src="photos/photo1.jpg"
-            class="photo-vertical"
-            onclick="openPhoto(0)"
-            alt="Pre-wedding photo 1"
-        >
+    margin: 0 auto;
 
-        <img
-            src="photos/photo2.jpg"
-            class="photo-vertical"
-            onclick="openPhoto(1)"
-            alt="Pre-wedding photo 2"
-        >
+    padding: 40px 0 80px;
 
-    </div>
+    box-sizing: border-box;
+
+    z-index: 2;
+}
 
 
-    <!-- PHOTO 3 -->
-    <div class="photo-horizontal">
+/* =========================================
+   TWO VERTICAL PHOTOS
+   ========================================= */
 
-        <img
-            src="photos/photo3.jpg"
-            onclick="openPhoto(2)"
-            alt="Pre-wedding photo 3"
-        >
+.photo-row {
+    display: flex;
 
-    </div>
+    width: 88%;
 
+    margin: 0 auto 10px;
 
-    <!-- PHOTO 4 + PHOTO 5 -->
-    <div class="photo-row">
+    gap: 8px;
 
-        <img
-            src="photos/photo4.jpg"
-            class="photo-vertical"
-            onclick="openPhoto(3)"
-            alt="Pre-wedding photo 4"
-        >
-
-        <img
-            src="photos/photo5.jpg"
-            class="photo-vertical"
-            onclick="openPhoto(4)"
-            alt="Pre-wedding photo 5"
-        >
-
-    </div>
+    align-items: flex-start;
+}
 
 
-    <!-- PHOTO 6 -->
-    <div class="photo-horizontal">
+.photo-row img {
+    display: block;
 
-        <img
-            src="photos/photo6.jpg"
-            onclick="openPhoto(5)"
-            alt="Pre-wedding photo 6"
-        >
+    width: calc(50% - 4px);
 
-    </div>
+    height: auto;
 
+    object-fit: contain;
 
-    <!-- PHOTO 7 + PHOTO 8 -->
-    <div class="photo-row">
+    border-radius: 6px;
 
-        <img
-            src="photos/photo7.jpg"
-            class="photo-vertical"
-            onclick="openPhoto(6)"
-            alt="Pre-wedding photo 7"
-        >
+    cursor: pointer;
 
-        <img
-            src="photos/photo8.jpg"
-            class="photo-vertical"
-            onclick="openPhoto(7)"
-            alt="Pre-wedding photo 8"
-        >
-
-    </div>
+    transition: transform 0.2s ease;
+}
 
 
-    <!-- PHOTO 9 -->
-    <div class="photo-horizontal">
+/* =========================================
+   ONE HORIZONTAL PHOTO
+   ========================================= */
 
-        <img
-            src="photos/photo9.jpg"
-            onclick="openPhoto(8)"
-            alt="Pre-wedding photo 9"
-        >
+.photo-horizontal {
+    width: 88%;
 
-    </div>
+    margin: 0 auto 10px;
+}
 
 
-    <!-- PHOTO 10 + PHOTO 11 -->
-    <div class="photo-row">
+.photo-horizontal img {
+    display: block;
 
-        <img
-            src="photos/photo10.jpg"
-            class="photo-vertical"
-            onclick="openPhoto(9)"
-            alt="Pre-wedding photo 10"
-        >
+    width: 100%;
 
-        <img
-            src="photos/photo11.jpg"
-            class="photo-vertical"
-            onclick="openPhoto(10)"
-            alt="Pre-wedding photo 11"
-        >
+    height: auto;
 
-    </div>
+    object-fit: contain;
 
-</section>
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+
+/* =========================================
+   TOUCH EFFECT
+   ========================================= */
+
+.photo-row img:active,
+.photo-horizontal img:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .prewedding-section {
+        max-width: 100%;
+
+        padding-top: 30px;
+        padding-bottom: 70px;
+    }
+
+
+    .photo-row {
+        width: 84%;
+
+        gap: 6px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .photo-row img {
+        width: calc(50% - 3px);
+
+        border-radius: 5px;
+    }
+
+
+    .photo-horizontal {
+        width: 84%;
+
+        margin-bottom: 8px;
+    }
+
+
+    .photo-horizontal img {
+        width: 100%;
+
+        border-radius: 5px;
+    }
+
+}
 
 
 <!-- =========================================
