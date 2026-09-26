@@ -132,6 +132,165 @@
         class="page2-content"
         alt="Wedding invitation information"
     >
+    <!-- =========================================
+     PRE-WEDDING PHOTO GALLERY
+     ========================================= -->
+
+<section class="prewedding-section">
+
+    <!-- PHOTO 1 + PHOTO 2 -->
+    <div class="photo-row">
+
+        <img
+            src="photos/photo1.jpg"
+            class="photo-vertical"
+            onclick="openPhoto(0)"
+            alt="Pre-wedding photo 1"
+        >
+
+        <img
+            src="photos/photo2.jpg"
+            class="photo-vertical"
+            onclick="openPhoto(1)"
+            alt="Pre-wedding photo 2"
+        >
+
+    </div>
+
+
+    <!-- PHOTO 3 -->
+    <div class="photo-horizontal">
+
+        <img
+            src="photos/photo3.jpg"
+            onclick="openPhoto(2)"
+            alt="Pre-wedding photo 3"
+        >
+
+    </div>
+
+
+    <!-- PHOTO 4 + PHOTO 5 -->
+    <div class="photo-row">
+
+        <img
+            src="photos/photo4.jpg"
+            class="photo-vertical"
+            onclick="openPhoto(3)"
+            alt="Pre-wedding photo 4"
+        >
+
+        <img
+            src="photos/photo5.jpg"
+            class="photo-vertical"
+            onclick="openPhoto(4)"
+            alt="Pre-wedding photo 5"
+        >
+
+    </div>
+
+
+    <!-- PHOTO 6 -->
+    <div class="photo-horizontal">
+
+        <img
+            src="photos/photo6.jpg"
+            onclick="openPhoto(5)"
+            alt="Pre-wedding photo 6"
+        >
+
+    </div>
+
+
+    <!-- PHOTO 7 + PHOTO 8 -->
+    <div class="photo-row">
+
+        <img
+            src="photos/photo7.jpg"
+            class="photo-vertical"
+            onclick="openPhoto(6)"
+            alt="Pre-wedding photo 7"
+        >
+
+        <img
+            src="photos/photo8.jpg"
+            class="photo-vertical"
+            onclick="openPhoto(7)"
+            alt="Pre-wedding photo 8"
+        >
+
+    </div>
+
+
+    <!-- PHOTO 9 -->
+    <div class="photo-horizontal">
+
+        <img
+            src="photos/photo9.jpg"
+            onclick="openPhoto(8)"
+            alt="Pre-wedding photo 9"
+        >
+
+    </div>
+
+
+    <!-- PHOTO 10 + PHOTO 11 -->
+    <div class="photo-row">
+
+        <img
+            src="photos/photo10.jpg"
+            class="photo-vertical"
+            onclick="openPhoto(9)"
+            alt="Pre-wedding photo 10"
+        >
+
+        <img
+            src="photos/photo11.jpg"
+            class="photo-vertical"
+            onclick="openPhoto(10)"
+            alt="Pre-wedding photo 11"
+        >
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FULL SCREEN PHOTO VIEWER
+     ========================================= -->
+
+<div id="photoViewer" class="photo-viewer">
+
+    <button
+        class="photo-close"
+        onclick="closePhoto()"
+    >
+        ×
+    </button>
+
+    <button
+        class="photo-arrow photo-prev"
+        onclick="previousPhoto(event)"
+    >
+        ‹
+    </button>
+
+    <img
+        id="largePhoto"
+        class="large-photo"
+        src=""
+        alt="Pre-wedding photo"
+    >
+
+    <button
+        class="photo-arrow photo-next"
+        onclick="nextPhoto(event)"
+    >
+        ›
+    </button>
+
+</div>
 
 </main>
 
