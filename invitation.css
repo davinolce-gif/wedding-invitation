@@ -893,5 +893,29 @@ body {
         height: 40px;
 
         line-height: 36px;
+       /* =========================================
+   CANVA PNG AFTER PRE-WEDDING PHOTOS
+   ========================================= */
+
+.after-prewedding {
+    position: relative;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    z-index: 2;
+}
+
+.after-prewedding img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+    padding: 0;
+}
     }
 }
