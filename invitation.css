@@ -632,238 +632,162 @@ body {
         transform: translateX(30px) rotate(420deg);
     }
 }
-/* =========================================
-   PRE-WEDDING PHOTO GALLERY
-   ========================================= */
+<!-- =========================================
+     PRE-WEDDING PHOTO GALLERY
+     ========================================= -->
 
-.prewedding-section {
-    position: relative;
+<section class="prewedding-section">
 
-    width: 100%;
+    <!-- PHOTO 1 + PHOTO 2 -->
+    <div class="photo-row">
 
-    padding: 50px 20px;
+        <img
+            src="photos/photo1.jpg"
+            class="photo-vertical"
+            onclick="openPhoto(0)"
+            alt="Pre-wedding photo 1"
+        >
 
-    box-sizing: border-box;
+        <img
+            src="photos/photo2.jpg"
+            class="photo-vertical"
+            onclick="openPhoto(1)"
+            alt="Pre-wedding photo 2"
+        >
 
-    z-index: 2;
-}
+    </div>
 
 
-/* PHOTO GRID */
+    <!-- PHOTO 3 -->
+    <div class="photo-horizontal">
 
-.prewedding-gallery {
-    width: 100%;
-    max-width: 900px;
+        <img
+            src="photos/photo3.jpg"
+            onclick="openPhoto(2)"
+            alt="Pre-wedding photo 3"
+        >
 
-    margin: 0 auto;
+    </div>
 
-    display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    <!-- PHOTO 4 + PHOTO 5 -->
+    <div class="photo-row">
 
-    gap: 12px;
-}
+        <img
+            src="photos/photo4.jpg"
+            class="photo-vertical"
+            onclick="openPhoto(3)"
+            alt="Pre-wedding photo 4"
+        >
 
+        <img
+            src="photos/photo5.jpg"
+            class="photo-vertical"
+            onclick="openPhoto(4)"
+            alt="Pre-wedding photo 5"
+        >
 
-/* PHOTO */
+    </div>
 
-.gallery-photo {
-    display: block;
 
-    width: 100%;
-    height: auto;
+    <!-- PHOTO 6 -->
+    <div class="photo-horizontal">
 
-    border-radius: 10px;
+        <img
+            src="photos/photo6.jpg"
+            onclick="openPhoto(5)"
+            alt="Pre-wedding photo 6"
+        >
 
-    cursor: pointer;
+    </div>
 
-    object-fit: cover;
 
-    transition: transform 0.25s ease;
-}
+    <!-- PHOTO 7 + PHOTO 8 -->
+    <div class="photo-row">
 
+        <img
+            src="photos/photo7.jpg"
+            class="photo-vertical"
+            onclick="openPhoto(6)"
+            alt="Pre-wedding photo 7"
+        >
 
-/* Small touch animation */
+        <img
+            src="photos/photo8.jpg"
+            class="photo-vertical"
+            onclick="openPhoto(7)"
+            alt="Pre-wedding photo 8"
+        >
 
-.gallery-photo:active {
-    transform: scale(0.97);
-}
+    </div>
 
 
-/* =========================================
-   FULL-SCREEN PHOTO VIEWER
-   ========================================= */
+    <!-- PHOTO 9 -->
+    <div class="photo-horizontal">
 
-.photo-viewer {
-    position: fixed;
+        <img
+            src="photos/photo9.jpg"
+            onclick="openPhoto(8)"
+            alt="Pre-wedding photo 9"
+        >
 
-    inset: 0;
+    </div>
 
-    width: 100vw;
-    height: 100vh;
 
-    background: rgba(0, 0, 0, 0.78);
-
-    display: none;
-
-    align-items: center;
-    justify-content: center;
-
-    z-index: 100;
-
-    padding: 30px;
-
-    box-sizing: border-box;
-}
-
-
-/* Show viewer */
-
-.photo-viewer.active {
-    display: flex;
-}
-
-
-/* =========================================
-   LARGE PHOTO
-   ========================================= */
-
-.large-photo {
-    display: block;
-
-    max-width: 90vw;
-    max-height: 85vh;
-
-    width: auto;
-    height: auto;
-
-    object-fit: contain;
-
-    border-radius: 8px;
-
-    box-shadow:
-        0 10px 40px rgba(0, 0, 0, 0.5);
-}
-
-
-/* =========================================
-   CLOSE BUTTON
-   ========================================= */
-
-.photo-close {
-    position: absolute;
-
-    top: 20px;
-    right: 20px;
-
-    width: 45px;
-    height: 45px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.18);
-
-    color: white;
-
-    font-size: 32px;
-
-    line-height: 40px;
-
-    cursor: pointer;
-
-    z-index: 110;
-}
-
-
-/* =========================================
-   LEFT / RIGHT ARROWS
-   ========================================= */
-
-.photo-arrow {
-    position: absolute;
-
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: 50px;
-    height: 50px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.18);
-
-    color: white;
-
-    font-size: 42px;
-
-    line-height: 40px;
-
-    cursor: pointer;
-
-    z-index: 110;
-}
-
-
-.photo-prev {
-    left: 15px;
-}
-
-
-.photo-next {
-    right: 15px;
-}
-
-
-/* =========================================
-   MOBILE
-   ========================================= */
-
-@media (max-width: 600px) {
-
-    .prewedding-gallery {
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 8px;
-    }
-
-
-    .large-photo {
-        max-width: 88vw;
-        max-height: 80vh;
-    }
-
-
-    .photo-close {
-        top: 15px;
-        right: 15px;
-
-        width: 42px;
-        height: 42px;
-
-        font-size: 30px;
-    }
-
-
-    .photo-arrow {
-        width: 42px;
-        height: 42px;
-
-        font-size: 36px;
-    }
-
-
-    .photo-prev {
-        left: 8px;
-    }
-
-
-    .photo-next {
-        right: 8px;
-    }
-
-}
+    <!-- PHOTO 10 + PHOTO 11 -->
+    <div class="photo-row">
+
+        <img
+            src="photos/photo10.jpg"
+            class="photo-vertical"
+            onclick="openPhoto(9)"
+            alt="Pre-wedding photo 10"
+        >
+
+        <img
+            src="photos/photo11.jpg"
+            class="photo-vertical"
+            onclick="openPhoto(10)"
+            alt="Pre-wedding photo 11"
+        >
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FULL SCREEN PHOTO VIEWER
+     ========================================= -->
+
+<div id="photoViewer" class="photo-viewer">
+
+    <button
+        class="photo-close"
+        onclick="closePhoto()"
+    >
+        ×
+    </button>
+
+    <button
+        class="photo-arrow photo-prev"
+        onclick="previousPhoto(event)"
+    >
+        ‹
+    </button>
+
+    <img
+        id="largePhoto"
+        class="large-photo"
+        src=""
+        alt="Pre-wedding photo"
+    >
+
+    <button
+        class="photo-arrow photo-next"
+        onclick="nextPhoto(event)"
+    >
+        ›
+    </button>
+
+</div>
