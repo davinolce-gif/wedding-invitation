@@ -167,181 +167,140 @@ body {
 }
 
 
-/* =========================
-   FLIGHT PATH 1
-   ========================= */
-
+/* 🦋 Butterfly 1: LEFT → RIGHT */
 @keyframes butterflyFlight1 {
-
     0% {
         left: -10%;
         top: 25%;
-        transform: rotate(-15deg);
+        transform: scaleX(1) rotate(-8deg);
     }
 
-    20% {
+    25% {
         left: 20%;
         top: 18%;
-        transform: rotate(12deg);
+        transform: scaleX(1) rotate(8deg);
     }
 
-    40% {
+    50% {
         left: 45%;
         top: 30%;
-        transform: rotate(-8deg);
+        transform: scaleX(1) rotate(-6deg);
     }
 
-    60% {
-        left: 65%;
+    75% {
+        left: 70%;
         top: 20%;
-        transform: rotate(15deg);
-    }
-
-    80% {
-        left: 85%;
-        top: 35%;
-        transform: rotate(-12deg);
+        transform: scaleX(1) rotate(8deg);
     }
 
     100% {
         left: 110%;
-        top: 25%;
-        transform: rotate(10deg);
+        top: 27%;
+        transform: scaleX(1) rotate(4deg);
     }
 }
 
 
-/* =========================
-   FLIGHT PATH 2
-   ========================= */
-
+/* 🦋 Butterfly 2: RIGHT → LEFT */
 @keyframes butterflyFlight2 {
-
     0% {
         left: 110%;
         top: 45%;
-        transform: rotate(15deg);
+        transform: scaleX(-1) rotate(4deg);
     }
 
-    20% {
-        left: 85%;
+    25% {
+        left: 80%;
         top: 55%;
-        transform: rotate(-10deg);
+        transform: scaleX(-1) rotate(-8deg);
     }
 
-    40% {
-        left: 60%;
+    50% {
+        left: 50%;
         top: 40%;
-        transform: rotate(8deg);
+        transform: scaleX(-1) rotate(6deg);
     }
 
-    60% {
-        left: 40%;
+    75% {
+        left: 20%;
         top: 52%;
-        transform: rotate(-15deg);
-    }
-
-    80% {
-        left: 15%;
-        top: 42%;
-        transform: rotate(10deg);
+        transform: scaleX(-1) rotate(-8deg);
     }
 
     100% {
         left: -10%;
-        top: 50%;
-        transform: rotate(-12deg);
+        top: 45%;
+        transform: scaleX(-1) rotate(4deg);
     }
 }
 
 
-/* =========================
-   FLIGHT PATH 3
-   ========================= */
-
+/* 🦋 Butterfly 3: LEFT → RIGHT */
 @keyframes butterflyFlight3 {
-
     0% {
         left: -10%;
         top: 65%;
-        transform: rotate(12deg);
+        transform: scaleX(1) rotate(6deg);
     }
 
-    20% {
-        left: 20%;
+    25% {
+        left: 25%;
         top: 55%;
-        transform: rotate(-15deg);
+        transform: scaleX(1) rotate(-8deg);
     }
 
-    40% {
-        left: 40%;
+    50% {
+        left: 50%;
         top: 70%;
-        transform: rotate(10deg);
+        transform: scaleX(1) rotate(6deg);
     }
 
-    60% {
-        left: 65%;
+    75% {
+        left: 75%;
         top: 60%;
-        transform: rotate(-8deg);
-    }
-
-    80% {
-        left: 85%;
-        top: 72%;
-        transform: rotate(15deg);
+        transform: scaleX(1) rotate(-7deg);
     }
 
     100% {
         left: 110%;
-        top: 62%;
-        transform: rotate(-10deg);
+        top: 65%;
+        transform: scaleX(1) rotate(4deg);
     }
 }
 
 
-/* =========================
-   FLIGHT PATH 4
-   ========================= */
-
+/* 🦋 Butterfly 4: RIGHT → LEFT */
 @keyframes butterflyFlight4 {
-
     0% {
         left: 110%;
         top: 15%;
-        transform: rotate(-10deg);
+        transform: scaleX(-1) rotate(5deg);
     }
 
-    20% {
-        left: 85%;
+    25% {
+        left: 80%;
         top: 25%;
-        transform: rotate(15deg);
+        transform: scaleX(-1) rotate(-8deg);
     }
 
-    40% {
-        left: 65%;
+    50% {
+        left: 50%;
         top: 12%;
-        transform: rotate(-8deg);
+        transform: scaleX(-1) rotate(7deg);
     }
 
-    60% {
-        left: 40%;
+    75% {
+        left: 20%;
         top: 28%;
-        transform: rotate(12deg);
-    }
-
-    80% {
-        left: 15%;
-        top: 18%;
-        transform: rotate(-15deg);
+        transform: scaleX(-1) rotate(-8deg);
     }
 
     100% {
         left: -10%;
-        top: 30%;
-        transform: rotate(8deg);
+        top: 20%;
+        transform: scaleX(-1) rotate(5deg);
     }
 }
-
 /* =========================================================
    FALLING PETALS
    ========================================================= */
