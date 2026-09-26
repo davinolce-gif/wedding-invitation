@@ -633,74 +633,53 @@ body {
     }
 }
 /* =========================================
-   PRE-WEDDING PHOTO GALLERY
+   PRE-WEDDING GALLERY
    ========================================= */
 
 .prewedding-section {
     position: relative;
-
     width: 100%;
     max-width: 520px;
-
     margin: 0 auto;
-
-    padding: 40px 0 80px;
-
+    padding: 30px 0 80px;
     box-sizing: border-box;
-
     z-index: 2;
 }
 
 
-/* =========================================
-   TWO VERTICAL PHOTOS
-   ========================================= */
+/* TWO VERTICAL PHOTOS */
 
 .photo-row {
+    width: 84%;
+    margin: 0 auto 8px;
+
     display: flex;
+    gap: 6px;
 
-    width: 88%;
+    box-sizing: border-box;
+}
 
-    margin: 0 auto 10px;
-
-    gap: 8px;
-
-    align-items: flex-start;
+.photo-row .gallery-photo {
+    width: calc(50% - 3px);
 }
 
 
-.photo-row img {
-    display: block;
-
-    width: calc(50% - 4px);
-
-    height: auto;
-
-    object-fit: contain;
-
-    border-radius: 6px;
-
-    cursor: pointer;
-
-    transition: transform 0.2s ease;
-}
-
-
-/* =========================================
-   ONE HORIZONTAL PHOTO
-   ========================================= */
+/* ONE HORIZONTAL PHOTO */
 
 .photo-horizontal {
-    width: 88%;
+    width: 84%;
+    margin: 0 auto 8px;
+}
 
-    margin: 0 auto 10px;
+.photo-horizontal .gallery-photo {
+    width: 100%;
 }
 
 
-.photo-horizontal img {
-    display: block;
+/* ALL GALLERY PHOTOS */
 
-    width: 100%;
+.gallery-photo {
+    display: block;
 
     height: auto;
 
@@ -713,14 +692,163 @@ body {
     transition: transform 0.2s ease;
 }
 
+.gallery-photo:active {
+    transform: scale(0.97);
+}
+
 
 /* =========================================
-   TOUCH EFFECT
+   FULL SCREEN PHOTO PREVIEW
    ========================================= */
 
-.photo-row img:active,
-.photo-horizontal img:active {
-    transform: scale(0.97);
+.photo-viewer {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.88);
+
+    z-index: 99999 !important;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* WHEN OPEN */
+
+.photo-viewer.show {
+    display: flex !important;
+}
+
+
+/* LARGE PHOTO */
+
+.large-photo {
+    display: block;
+
+    max-width: 88vw;
+    max-height: 86vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 6px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+   ========================================= */
+
+.photo-close {
+    position: absolute !important;
+
+    top: 18px !important;
+    right: 18px !important;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    color: white;
+
+    font-size: 32px;
+    line-height: 44px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    z-index: 100001;
+}
+
+
+/* =========================================
+   PREVIOUS BUTTON
+   ========================================= */
+
+.photo-prev {
+    position: absolute !important;
+
+    top: 50% !important;
+    left: 12px !important;
+
+    transform: translateY(-50%);
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    color: white;
+
+    font-size: 38px;
+    line-height: 40px;
+
+    cursor: pointer;
+
+    z-index: 100001;
+}
+
+
+/* =========================================
+   NEXT BUTTON
+   ========================================= */
+
+.photo-next {
+    position: absolute !important;
+
+    top: 50% !important;
+    right: 12px !important;
+
+    transform: translateY(-50%);
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    color: white;
+
+    font-size: 38px;
+    line-height: 40px;
+
+    cursor: pointer;
+
+    z-index: 100001;
 }
 
 
@@ -730,78 +858,40 @@ body {
 
 @media (max-width: 600px) {
 
-    .prewedding-section {
-        max-width: 100%;
-
-        padding-top: 30px;
-        padding-bottom: 70px;
+    .photo-viewer {
+        padding: 15px;
     }
 
-
-    .photo-row {
-        width: 84%;
-
-        gap: 6px;
-
-        margin-bottom: 8px;
+    .large-photo {
+        max-width: 90vw;
+        max-height: 82vh;
     }
 
+    .photo-close {
+        top: 15px !important;
+        right: 15px !important;
 
-    .photo-row img {
-        width: calc(50% - 3px);
+        width: 42px;
+        height: 42px;
 
-        border-radius: 5px;
+        line-height: 42px;
     }
 
+    .photo-prev {
+        left: 8px !important;
 
-    .photo-horizontal {
-        width: 84%;
+        width: 40px;
+        height: 40px;
 
-        margin-bottom: 8px;
+        line-height: 36px;
     }
 
+    .photo-next {
+        right: 8px !important;
 
-    .photo-horizontal img {
-        width: 100%;
+        width: 40px;
+        height: 40px;
 
-        border-radius: 5px;
+        line-height: 36px;
     }
-
 }
-
-
-<!-- =========================================
-     FULL SCREEN PHOTO VIEWER
-     ========================================= -->
-
-<div id="photoViewer" class="photo-viewer">
-
-    <button
-        class="photo-close"
-        onclick="closePhoto()"
-    >
-        ×
-    </button>
-
-    <button
-        class="photo-arrow photo-prev"
-        onclick="previousPhoto(event)"
-    >
-        ‹
-    </button>
-
-    <img
-        id="largePhoto"
-        class="large-photo"
-        src=""
-        alt="Pre-wedding photo"
-    >
-
-    <button
-        class="photo-arrow photo-next"
-        onclick="nextPhoto(event)"
-    >
-        ›
-    </button>
-
-</div>
