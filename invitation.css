@@ -1,0 +1,623 @@
+/* ==================================================
+   BASIC PAGE
+   ================================================== */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    min-height: 100%;
+
+    overflow-x: hidden;
+}
+
+body {
+    background: #f5eee4;
+    overflow-y: auto;
+}
+
+
+/* ==================================================
+   FIXED BACKGROUND
+   ================================================== */
+
+.fixed-background {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background-image: url("background.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* ==================================================
+   SCROLLING WEDDING CONTENT
+   ================================================== */
+
+.scrolling-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
+
+
+/* ==================================================
+   WEDDING SECTIONS
+   ================================================== */
+
+.invitation-section {
+    min-height: 100vh;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 120px 20%;
+}
+
+
+/* ==================================================
+   TEXT BOX
+   ================================================== */
+
+.text-box {
+    width: 100%;
+
+    max-width: 650px;
+
+    box-sizing: border-box;
+
+    padding: 30px;
+}
+
+
+/* ==================================================
+   TITLE
+   ================================================== */
+
+.text-box h1 {
+    margin: 0 0 30px 0;
+
+    font-size: clamp(30px, 7vw, 55px);
+
+    line-height: 1.5;
+
+    font-weight: 600;
+
+    color: #7b2d2d;
+}
+
+
+/* ==================================================
+   HEADINGS
+   ================================================== */
+
+.text-box h2 {
+    margin: 25px 0;
+
+    font-size: clamp(26px, 6vw, 45px);
+
+    line-height: 1.5;
+
+    font-weight: 600;
+
+    color: #7b2d2d;
+}
+
+
+/* ==================================================
+   PARAGRAPHS
+   ================================================== */
+
+.text-box p {
+    margin: 18px 0;
+
+    font-size: clamp(18px, 4vw, 28px);
+
+    line-height: 2;
+
+    color: #5a4636;
+}
+
+
+/* ==================================================
+   FIXED FOREGROUND
+   ================================================== */
+
+.fixed-foreground {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+
+/* ==================================================
+   BUTTERFLY + PETAL EFFECT LAYER
+   ================================================== */
+
+.page-effects {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+
+/* ==================================================
+   BUTTERFLIES
+   ================================================== */
+
+.page-butterfly {
+    position: absolute;
+
+    width: 60px;
+    height: auto;
+
+    opacity: 0.6;
+
+    pointer-events: none;
+
+    will-change: transform, left, top;
+}
+
+
+/* Butterfly 1 */
+
+.butterfly-1 {
+    left: -10%;
+    top: 20%;
+
+    animation:
+        pageButterfly1 16s ease-in-out infinite;
+}
+
+
+/* Butterfly 2 */
+
+.butterfly-2 {
+    left: 110%;
+    top: 42%;
+
+    width: 50px;
+
+    animation:
+        pageButterfly2 18s ease-in-out infinite;
+}
+
+
+/* Butterfly 3 */
+
+.butterfly-3 {
+    left: -10%;
+    top: 65%;
+
+    width: 70px;
+
+    animation:
+        pageButterfly3 20s ease-in-out infinite;
+}
+
+
+/* Butterfly 4 */
+
+.butterfly-4 {
+    left: 110%;
+    top: 12%;
+
+    width: 55px;
+
+    animation:
+        pageButterfly4 17s ease-in-out infinite;
+}
+
+
+/* ==================================================
+   BUTTERFLY 1
+   LEFT → RIGHT
+   ================================================== */
+
+@keyframes pageButterfly1 {
+
+    0% {
+        left: -10%;
+        top: 25%;
+        transform: scaleX(1) rotate(-8deg);
+    }
+
+    25% {
+        left: 20%;
+        top: 18%;
+        transform: scaleX(1) rotate(8deg);
+    }
+
+    50% {
+        left: 45%;
+        top: 30%;
+        transform: scaleX(1) rotate(-6deg);
+    }
+
+    75% {
+        left: 70%;
+        top: 20%;
+        transform: scaleX(1) rotate(8deg);
+    }
+
+    100% {
+        left: 110%;
+        top: 27%;
+        transform: scaleX(1) rotate(4deg);
+    }
+}
+
+
+/* ==================================================
+   BUTTERFLY 2
+   RIGHT → LEFT
+   ================================================== */
+
+@keyframes pageButterfly2 {
+
+    0% {
+        left: 110%;
+        top: 45%;
+        transform: scaleX(-1) rotate(4deg);
+    }
+
+    25% {
+        left: 80%;
+        top: 55%;
+        transform: scaleX(-1) rotate(-8deg);
+    }
+
+    50% {
+        left: 50%;
+        top: 40%;
+        transform: scaleX(-1) rotate(6deg);
+    }
+
+    75% {
+        left: 20%;
+        top: 52%;
+        transform: scaleX(-1) rotate(-8deg);
+    }
+
+    100% {
+        left: -10%;
+        top: 45%;
+        transform: scaleX(-1) rotate(4deg);
+    }
+}
+
+
+/* ==================================================
+   BUTTERFLY 3
+   LEFT → RIGHT
+   ================================================== */
+
+@keyframes pageButterfly3 {
+
+    0% {
+        left: -10%;
+        top: 65%;
+        transform: scaleX(1) rotate(6deg);
+    }
+
+    25% {
+        left: 25%;
+        top: 55%;
+        transform: scaleX(1) rotate(-8deg);
+    }
+
+    50% {
+        left: 50%;
+        top: 70%;
+        transform: scaleX(1) rotate(6deg);
+    }
+
+    75% {
+        left: 75%;
+        top: 60%;
+        transform: scaleX(1) rotate(-7deg);
+    }
+
+    100% {
+        left: 110%;
+        top: 65%;
+        transform: scaleX(1) rotate(4deg);
+    }
+}
+
+
+/* ==================================================
+   BUTTERFLY 4
+   RIGHT → LEFT
+   ================================================== */
+
+@keyframes pageButterfly4 {
+
+    0% {
+        left: 110%;
+        top: 15%;
+        transform: scaleX(-1) rotate(5deg);
+    }
+
+    25% {
+        left: 80%;
+        top: 25%;
+        transform: scaleX(-1) rotate(-8deg);
+    }
+
+    50% {
+        left: 50%;
+        top: 12%;
+        transform: scaleX(-1) rotate(7deg);
+    }
+
+    75% {
+        left: 20%;
+        top: 28%;
+        transform: scaleX(-1) rotate(-8deg);
+    }
+
+    100% {
+        left: -10%;
+        top: 20%;
+        transform: scaleX(-1) rotate(5deg);
+    }
+}
+
+
+/* ==================================================
+   PETALS
+   ================================================== */
+
+.page-petal {
+    position: absolute;
+
+    width: 65px;
+    height: auto;
+
+    opacity: 0.65;
+
+    pointer-events: none;
+
+    will-change: transform, top;
+}
+
+
+/* Petal positions */
+
+.petal-1 {
+    left: 5%;
+    animation: petalFall1 8s linear infinite;
+}
+
+.petal-2 {
+    left: 18%;
+    animation: petalFall2 10s linear infinite;
+}
+
+.petal-3 {
+    left: 30%;
+    animation: petalFall3 7s linear infinite;
+}
+
+.petal-4 {
+    left: 43%;
+    animation: petalFall4 11s linear infinite;
+}
+
+.petal-5 {
+    left: 56%;
+    animation: petalFall5 8s linear infinite;
+}
+
+.petal-6 {
+    left: 68%;
+    animation: petalFall6 9s linear infinite;
+}
+
+.petal-7 {
+    left: 80%;
+    animation: petalFall7 12s linear infinite;
+}
+
+.petal-8 {
+    left: 93%;
+    animation: petalFall8 8s linear infinite;
+}
+
+
+/* ==================================================
+   PETAL ANIMATIONS
+   ================================================== */
+
+@keyframes petalFall1 {
+
+    0% {
+        top: -10%;
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(60px) rotate(180deg);
+    }
+
+    100% {
+        top: 110%;
+        transform: translateX(-30px) rotate(360deg);
+    }
+}
+
+
+@keyframes petalFall2 {
+
+    0% {
+        top: -15%;
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(-70px) rotate(200deg);
+    }
+
+    100% {
+        top: 110%;
+        transform: translateX(40px) rotate(400deg);
+    }
+}
+
+
+@keyframes petalFall3 {
+
+    0% {
+        top: -10%;
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(50px) rotate(180deg);
+    }
+
+    100% {
+        top: 110%;
+        transform: translateX(-50px) rotate(360deg);
+    }
+}
+
+
+@keyframes petalFall4 {
+
+    0% {
+        top: -15%;
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(-60px) rotate(220deg);
+    }
+
+    100% {
+        top: 110%;
+        transform: translateX(30px) rotate(420deg);
+    }
+}
+
+
+@keyframes petalFall5 {
+
+    0% {
+        top: -10%;
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(80px) rotate(180deg);
+    }
+
+    100% {
+        top: 110%;
+        transform: translateX(-40px) rotate(360deg);
+    }
+}
+
+
+@keyframes petalFall6 {
+
+    0% {
+        top: -15%;
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(-50px) rotate(200deg);
+    }
+
+    100% {
+        top: 110%;
+        transform: translateX(60px) rotate(400deg);
+    }
+}
+
+
+@keyframes petalFall7 {
+
+    0% {
+        top: -10%;
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(70px) rotate(180deg);
+    }
+
+    100% {
+        top: 110%;
+        transform: translateX(-50px) rotate(360deg);
+    }
+}
+
+
+@keyframes petalFall8 {
+
+    0% {
+        top: -15%;
+        transform: translateX(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateX(-80px) rotate(220deg);
+    }
+
+    100% {
+        top: 110%;
+        transform: translateX(30px) rotate(420deg);
+    }
+}
