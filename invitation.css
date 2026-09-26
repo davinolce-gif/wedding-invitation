@@ -893,37 +893,5 @@ body {
         height: 40px;
 
         line-height: 36px;
-    /* =========================================
-   LAST CANVA PNG
-   SAME SIZE AS PAGE 1 / PAGE 2
-   ========================================= */
-
-.after-prewedding {
-    position: relative;
-
-    width: 100vw;
-    height: 100vh;
-
-    margin: 0;
-    padding: 0;
-
-    z-index: 2;
-
-    overflow: hidden;
-}
-
-.after-prewedding img {
-    display: block;
-
-    width: 100vw;
-    height: 100vh;
-
-    margin: 0;
-    padding: 0;
-
-    object-fit: cover;
-    object-position: center center;
-}
-}
     }
 }
