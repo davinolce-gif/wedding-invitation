@@ -895,3 +895,59 @@ body {
         line-height: 36px;
     }
 }
+/* =========================================
+   LAST CANVA PAGE — QR LINKS
+   ========================================= */
+
+.last-canva-page {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.last-canva-page .page2-content {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+/* Invisible clickable areas */
+
+.qr-link {
+    position: absolute;
+    display: block;
+    z-index: 5;
+    cursor: pointer;
+    background: transparent;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* GOOGLE MAPS — TOP QR */
+
+.qr-map {
+    left: 39%;
+    top: 13%;
+    width: 23%;
+    height: 17%;
+}
+
+/* DAVIN ABA — BOTTOM LEFT QR */
+
+.qr-davin {
+    left: 25%;
+    top: 76%;
+    width: 19%;
+    height: 19%;
+}
+
+/* SIVMEY ABA — BOTTOM RIGHT QR */
+
+.qr-sivmey {
+    left: 56%;
+    top: 76%;
+    width: 19%;
+    height: 19%;
+}
