@@ -185,7 +185,25 @@ if (guest) {
 
 </script>
 
+<script>
 
+function startPageTransition(event) {
+
+    event.preventDefault();
+
+    const link = event.currentTarget;
+
+    document.body.classList.add("page-transition");
+
+    setTimeout(function() {
+
+        window.location.href = link.href;
+
+    }, 800);
+
+}
+
+</script>
 </body>
 
 </html>
