@@ -926,28 +926,25 @@ body {
 }
 
 /* GOOGLE MAPS — TOP QR */
-
 .qr-map {
     left: 39%;
-    top: 13%;
+    top: 11%;
     width: 23%;
     height: 17%;
 }
 
 /* DAVIN ABA — BOTTOM LEFT QR */
-
 .qr-davin {
     left: 25%;
-    top: 76%;
+    top: 73%;
     width: 19%;
     height: 19%;
 }
 
 /* SIVMEY ABA — BOTTOM RIGHT QR */
-
 .qr-sivmey {
     left: 56%;
-    top: 76%;
+    top: 73%;
     width: 19%;
     height: 19%;
 }
