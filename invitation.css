@@ -927,24 +927,24 @@ body {
 
 /* GOOGLE MAPS — TOP QR */
 .qr-map {
-    left: 39%;
-    top: 5%;
-    width: 6%;
-    height: 6%;
+    left: 42%;
+    top: 4%;
+    width: 7%;
+    height: 5%;
 }
 
 /* DAVIN ABA — BOTTOM LEFT QR */
 .qr-davin {
-    left: 25%;
-    top: 55%;
-    width: 6%;
+    left: 30%;
+    top: 15%;
+    width: 7%;
     height: 6%;
 }
 
 /* SIVMEY ABA — BOTTOM RIGHT QR */
 .qr-sivmey {
-    left: 56%;
-    top: 55%;
-    width: 6%;
+    left: 62%;
+    top: 15%;
+    width: 7%;
     height: 6%;
 }
