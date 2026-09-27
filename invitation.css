@@ -936,17 +936,17 @@ body {
 /* DAVIN ABA — BOTTOM LEFT QR */
 .qr-davin {
     left: 31%;
-    top: 34%;
+    top: 32%;
     width: 16%;
-    height: 9%;
+    height: 11%;
 }
 
 /* SIVMEY ABA — BOTTOM RIGHT QR */
 .qr-sivmey {
     left: 52.5%;
-    top: 34%;
+    top: 32%;
     width: 16%;
-    height: 9%;
+    height: 11%;
 }
 /* =========================================
    PAGE 2 ENTRANCE
