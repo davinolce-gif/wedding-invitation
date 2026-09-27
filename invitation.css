@@ -928,7 +928,7 @@ body {
 /* GOOGLE MAPS — TOP QR */
 .qr-map {
     left: 44%;
-    top: 3.5%;
+    top: 4%;
     width: 11%;
     height: 7%;
 }
@@ -936,7 +936,7 @@ body {
 /* DAVIN ABA — BOTTOM LEFT QR */
 .qr-davin {
     left: 34%;
-    top: 24%;
+    top: 27%;
     width: 11%;
     height: 6%;
 }
@@ -944,7 +944,7 @@ body {
 /* SIVMEY ABA — BOTTOM RIGHT QR */
 .qr-sivmey {
     left: 55.5%;
-    top: 24%;
+    top: 27%;
     width: 11%;
     height: 6%;
 }
