@@ -164,36 +164,26 @@
          GUEST SELECTION
          ========================================= -->
 
-    <script>
+   <script>
 
-        const guests = {
+const params = new URLSearchParams(
+    window.location.search
+);
 
-            guest1: "covers/guest1.png",
-
-            guest2: "covers/guest2.png"
-
-        };
+const guest = params.get("guest");
 
 
-        const params =
-            new URLSearchParams(
-                window.location.search
-            );
+if (guest) {
 
+    const guestCover =
+        document.getElementById("guestCover");
 
-        const guest =
-            params.get("guest");
+    guestCover.src =
+        "covers/" + encodeURIComponent(guest) + ".png";
 
+}
 
-        const cover =
-            guests[guest] || guests.guest1;
-
-
-        document.getElementById(
-            "guestCover"
-        ).src = cover;
-
-    </script>
+</script>
 
 
 </body>
