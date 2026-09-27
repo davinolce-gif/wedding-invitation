@@ -478,5 +478,51 @@
     });
 
     </script>
+<script>
+const weddingDate = new Date("2026-12-16T00:00:00+07:00");
 
+function updateCountdown() {
+
+    const now = new Date();
+
+    if (now >= weddingDate) {
+        document.getElementById("countdown-months").textContent = "00";
+        document.getElementById("countdown-days").textContent = "00";
+        return;
+    }
+
+    let months =
+        (weddingDate.getFullYear() - now.getFullYear()) * 12 +
+        (weddingDate.getMonth() - now.getMonth());
+
+    let monthDate = new Date(now);
+
+    monthDate.setMonth(monthDate.getMonth() + months);
+
+    if (monthDate > weddingDate) {
+        months--;
+
+        monthDate = new Date(now);
+        monthDate.setMonth(monthDate.getMonth() + months);
+    }
+
+    const remaining = weddingDate - monthDate.getTime();
+
+    const days = Math.floor(
+        remaining / (1000 * 60 * 60 * 24)
+    );
+
+    document.getElementById("countdown-months").textContent =
+        String(months).padStart(2, "0");
+
+    document.getElementById("countdown-days").textContent =
+        String(days).padStart(2, "0");
+}
+
+updateCountdown();
+
+setInterval(updateCountdown, 60000);
+</script>
+
+</body>
 </body>
