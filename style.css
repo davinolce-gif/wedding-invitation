@@ -1311,3 +1311,23 @@ body {
     }
 
 }
+/* =========================================
+   PAGE 1 → PAGE 2 TRANSITION
+   ========================================= */
+
+.page-transition {
+    animation: pageFadeOut 0.8s ease forwards;
+}
+
+@keyframes pageFadeOut {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.08);
+    }
+}
