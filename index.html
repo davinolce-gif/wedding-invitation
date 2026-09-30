@@ -92,6 +92,119 @@
             transform: scale(0.92);
         }
 
+
+        /* =========================================
+           PAGE 1 — FALLING PETALS
+           Force petals above the cover image.
+           ========================================= */
+
+        .page-one .falling-petal {
+            position: absolute !important;
+            display: block !important;
+            width: 32px !important;
+            height: auto !important;
+            z-index: 200 !important;
+            pointer-events: none !important;
+            opacity: 0.95 !important;
+            visibility: visible !important;
+        }
+
+        .page-one .petal-1 {
+            left: 8%;
+            top: -8%;
+            animation: coverPetalFall1 7s linear infinite !important;
+        }
+
+        .page-one .petal-2 {
+            left: 22%;
+            top: -18%;
+            animation: coverPetalFall2 9s linear infinite 1s !important;
+        }
+
+        .page-one .petal-3 {
+            left: 38%;
+            top: -12%;
+            animation: coverPetalFall3 8s linear infinite 2s !important;
+        }
+
+        .page-one .petal-4 {
+            left: 53%;
+            top: -20%;
+            animation: coverPetalFall4 10s linear infinite 0.5s !important;
+        }
+
+        .page-one .petal-5 {
+            left: 68%;
+            top: -10%;
+            animation: coverPetalFall5 8.5s linear infinite 2.5s !important;
+        }
+
+        .page-one .petal-6 {
+            left: 82%;
+            top: -22%;
+            animation: coverPetalFall6 9.5s linear infinite 1.5s !important;
+        }
+
+        .page-one .petal-7 {
+            left: 47%;
+            top: -15%;
+            animation: coverPetalFall7 7.5s linear infinite 3s !important;
+        }
+
+        .page-one .petal-8 {
+            left: 92%;
+            top: -25%;
+            animation: coverPetalFall8 11s linear infinite 0.8s !important;
+        }
+
+        @keyframes coverPetalFall1 {
+            0%   { transform: translate3d(0, -10vh, 0) rotate(0deg); }
+            50%  { transform: translate3d(35px, 50vh, 0) rotate(180deg); }
+            100% { transform: translate3d(-20px, 115vh, 0) rotate(360deg); }
+        }
+
+        @keyframes coverPetalFall2 {
+            0%   { transform: translate3d(0, -10vh, 0) rotate(20deg); }
+            50%  { transform: translate3d(-30px, 55vh, 0) rotate(200deg); }
+            100% { transform: translate3d(25px, 115vh, 0) rotate(380deg); }
+        }
+
+        @keyframes coverPetalFall3 {
+            0%   { transform: translate3d(0, -10vh, 0) rotate(0deg); }
+            50%  { transform: translate3d(25px, 50vh, 0) rotate(-160deg); }
+            100% { transform: translate3d(-35px, 115vh, 0) rotate(-360deg); }
+        }
+
+        @keyframes coverPetalFall4 {
+            0%   { transform: translate3d(0, -10vh, 0) rotate(10deg); }
+            50%  { transform: translate3d(-25px, 55vh, 0) rotate(190deg); }
+            100% { transform: translate3d(30px, 115vh, 0) rotate(370deg); }
+        }
+
+        @keyframes coverPetalFall5 {
+            0%   { transform: translate3d(0, -10vh, 0) rotate(0deg); }
+            50%  { transform: translate3d(30px, 50vh, 0) rotate(170deg); }
+            100% { transform: translate3d(-25px, 115vh, 0) rotate(350deg); }
+        }
+
+        @keyframes coverPetalFall6 {
+            0%   { transform: translate3d(0, -10vh, 0) rotate(15deg); }
+            50%  { transform: translate3d(-35px, 55vh, 0) rotate(210deg); }
+            100% { transform: translate3d(20px, 115vh, 0) rotate(390deg); }
+        }
+
+        @keyframes coverPetalFall7 {
+            0%   { transform: translate3d(0, -10vh, 0) rotate(0deg); }
+            50%  { transform: translate3d(20px, 50vh, 0) rotate(-180deg); }
+            100% { transform: translate3d(-30px, 115vh, 0) rotate(-360deg); }
+        }
+
+        @keyframes coverPetalFall8 {
+            0%   { transform: translate3d(0, -10vh, 0) rotate(20deg); }
+            50%  { transform: translate3d(-30px, 55vh, 0) rotate(200deg); }
+            100% { transform: translate3d(30px, 115vh, 0) rotate(380deg); }
+        }
+
         /* Keep the fullscreen photo viewer above everything. */
         .photo-viewer {
             z-index: 99999 !important;
