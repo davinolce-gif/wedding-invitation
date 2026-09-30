@@ -29,8 +29,53 @@
             z-index: 100;
         }
 
+        /* =========================================
+           CINEMATIC COVER → PAGE 2 TRANSITION
+           ========================================= */
+
+        .page-one {
+            isolation: isolate;
+        }
+
         .page-one.page-transition {
-            animation: combinedPageFadeOut 0.8s ease forwards;
+            animation: coverCinematicExit 1.15s cubic-bezier(0.22, 0.72, 0.25, 1) forwards;
+        }
+
+        .page-one.page-transition::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: 999998;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 50% 45%,
+                    rgba(255, 246, 215, 0.10) 0%,
+                    rgba(255, 246, 215, 0.24) 35%,
+                    rgba(92, 55, 20, 0.42) 100%),
+                rgba(116, 76, 28, 0.18);
+            opacity: 0;
+            animation: goldenVeil 1.15s ease forwards;
+        }
+
+        .page-one.page-transition::before {
+            content: "";
+            position: fixed;
+            left: -15%;
+            right: -15%;
+            bottom: -18%;
+            height: 48%;
+            z-index: 999999;
+            pointer-events: none;
+            border-radius: 50% 50% 0 0;
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(255, 248, 226, 0) 0%,
+                    rgba(255, 247, 223, 0.78) 35%,
+                    rgba(255, 249, 231, 0.98) 100%
+                );
+            transform: translateY(115%) scaleX(1.05);
+            animation: elegantReveal 1.15s cubic-bezier(0.76, 0, 0.24, 1) forwards;
         }
 
         .page-one.page-hidden {
@@ -46,28 +91,81 @@
 
         .page-two.page-visible {
             display: block;
-            animation: combinedPageFadeIn 0.8s ease;
+            animation: pageTwoReveal 1.25s cubic-bezier(0.22, 0.61, 0.36, 1) both;
         }
 
-        @keyframes combinedPageFadeOut {
+        @keyframes coverCinematicExit {
             0% {
                 opacity: 1;
-                transform: scale(1);
+                transform: scale(1) translateY(0);
+                filter: blur(0);
+            }
+            45% {
+                opacity: 1;
+                transform: scale(1.035) translateY(-0.5%);
+                filter: blur(0);
             }
             100% {
                 opacity: 0;
-                transform: scale(1.08);
+                transform: scale(1.10) translateY(-2%);
+                filter: blur(7px);
             }
         }
 
-        @keyframes combinedPageFadeIn {
+        @keyframes goldenVeil {
             0% {
                 opacity: 0;
-                transform: scale(1.03);
+            }
+            38% {
+                opacity: 0.10;
+            }
+            68% {
+                opacity: 0.55;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes elegantReveal {
+            0% {
+                transform: translateY(115%) scaleX(1.05);
+                opacity: 1;
+            }
+            55% {
+                transform: translateY(15%) scaleX(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-115%) scaleX(1);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pageTwoReveal {
+            0% {
+                opacity: 0;
+                transform: scale(1.045);
+                filter: blur(9px);
+            }
+            45% {
+                opacity: 0.55;
+                transform: scale(1.018);
+                filter: blur(4px);
             }
             100% {
                 opacity: 1;
                 transform: scale(1);
+                filter: blur(0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .page-one.page-transition,
+            .page-one.page-transition::before,
+            .page-one.page-transition::after,
+            .page-two.page-visible {
+                animation-duration: 0.01ms !important;
             }
         }
 
@@ -1426,7 +1524,7 @@ setInterval(updateCountdown, 60000);
                 pageOne.classList.add("page-hidden");
                 pageTwo.classList.add("page-visible");
                 window.scrollTo({ top: 0, behavior: "instant" });
-            }, 800);
+            }, 1150);
         }
 
     </script>
