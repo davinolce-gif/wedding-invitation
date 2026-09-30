@@ -205,6 +205,71 @@
             100% { transform: translate3d(30px, 115vh, 0) rotate(380deg); }
         }
 
+
+        /* =========================================
+           PHOTO VIEWER — MOBILE BUTTON POSITION
+           Keep previous/next arrows centered vertically
+           on the screen and aligned to the photo sides.
+           ========================================= */
+
+        .photo-viewer .photo-prev,
+        .photo-viewer .photo-next {
+            position: fixed !important;
+            top: 50% !important;
+            bottom: auto !important;
+            transform: translateY(-50%) !important;
+            z-index: 100001 !important;
+            width: 52px !important;
+            height: 64px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            border: none !important;
+            background: rgba(255, 255, 255, 0.18) !important;
+            color: #ffffff !important;
+            border-radius: 50% !important;
+            font-size: 48px !important;
+            line-height: 1 !important;
+            box-sizing: border-box !important;
+            -webkit-tap-highlight-color: transparent !important;
+        }
+
+        .photo-viewer .photo-prev {
+            left: 10px !important;
+            right: auto !important;
+        }
+
+        .photo-viewer .photo-next {
+            right: 10px !important;
+            left: auto !important;
+        }
+
+        .photo-viewer .photo-close {
+            position: fixed !important;
+            top: 22px !important;
+            right: 18px !important;
+            z-index: 100002 !important;
+        }
+
+        @media (max-width: 600px) {
+            .photo-viewer .photo-prev,
+            .photo-viewer .photo-next {
+                width: 48px !important;
+                height: 58px !important;
+                font-size: 44px !important;
+            }
+
+            .photo-viewer .photo-prev {
+                left: 8px !important;
+            }
+
+            .photo-viewer .photo-next {
+                right: 8px !important;
+            }
+        }
+
         /* Keep the fullscreen photo viewer above everything. */
         .photo-viewer {
             z-index: 99999 !important;
@@ -1318,33 +1383,11 @@ setInterval(updateCountdown, 60000);
     <audio id="weddingMusic" loop preload="auto">
         <source src="music/wedding.mp3" type="audio/mpeg">
     </audio>
-
-    <button id="musicButton"
-            class="music-button"
-            type="button"
-            onclick="toggleMusic()"
-            aria-label="Play or pause wedding music">
-        🎵
-    </button>
-
-    <!-- =========================================
+<!-- =========================================
          COMBINED PAGE JAVASCRIPT
          ========================================= -->
     <script>
-        // First tap anywhere on the cover starts the music.
-        // This is especially useful inside Telegram's in-app browser,
-        // where autoplay with sound may be blocked until user interaction.
-        document.addEventListener("pointerdown", function (event) {
-            const pageOne = document.getElementById("pageOne");
-
-            if (!pageOne || pageOne.classList.contains("page-hidden")) {
-                return;
-            }
-
-            startWeddingMusic();
-        }, { once: true });
-
-        // Guest cover: ?guest=John loads covers/John.png
+// Guest cover: ?guest=John loads covers/John.png
         const params = new URLSearchParams(window.location.search);
         const guest = params.get("guest");
 
@@ -1356,32 +1399,16 @@ setInterval(updateCountdown, 60000);
         // Page 1 -> Page 2, without loading another HTML file.
         function startWeddingMusic() {
             const music = document.getElementById("weddingMusic");
-            const musicButton = document.getElementById("musicButton");
 
             if (!music || !music.paused) {
-                if (musicButton && music && !music.paused) {
-                    musicButton.textContent = "🔊";
-                }
                 return;
             }
 
-            music.play().then(function () {
-                if (musicButton) {
-                    musicButton.textContent = "🔊";
-                }
-            }).catch(function () {
-                // Telegram/in-app browsers may block audio until a later tap.
-                if (musicButton) {
-                    musicButton.textContent = "🎵";
-                }
+            music.play().catch(function () {
+                // The play request is made from the invitation click.
+                // If Telegram still blocks it, the browser controls playback.
             });
         }
-
-        // Try once when the cover loads. If the browser blocks autoplay,
-        // the first user tap anywhere on the cover will start the music.
-        window.addEventListener("load", function () {
-            startWeddingMusic();
-        });
 
         function openInvitation(event) {
             event.preventDefault();
@@ -1402,21 +1429,6 @@ setInterval(updateCountdown, 60000);
             }, 800);
         }
 
-        function toggleMusic() {
-            const music = document.getElementById("weddingMusic");
-            const button = document.getElementById("musicButton");
-
-            if (music.paused) {
-                music.play().then(function () {
-                    button.textContent = "🔊";
-                }).catch(function () {
-                    button.textContent = "🎵";
-                });
-            } else {
-                music.pause();
-                button.textContent = "🎵";
-            }
-        }
     </script>
 
 </body>
