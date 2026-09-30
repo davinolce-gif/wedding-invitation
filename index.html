@@ -91,7 +91,7 @@
 
         .page-two.page-visible {
             display: block;
-            animation: pageTwoReveal 1.25s ease both;
+            animation: none !important;
         }
 
         @keyframes coverCinematicExit {
@@ -141,13 +141,7 @@
                 opacity: 0;
             }
         }
-
-        @keyframes pageTwoReveal {
-            0% {
-                opacity: 0;
-                filter: blur(9px);
-            }
-            45% {
+45% {
                 opacity: 0.55;
                 filter: blur(4px);
             }
@@ -345,6 +339,27 @@
             position: relative !important;
             z-index: 2 !important;
             width: 100% !important;
+        }
+
+        /* Reveal only the scrolling content.
+           Do NOT animate/filter .page-two itself. */
+        .page-two.page-visible .scrolling-content {
+            animation: pageTwoContentReveal 1.25s ease both;
+        }
+
+        @keyframes pageTwoContentReveal {
+            0% {
+                opacity: 0;
+                filter: blur(9px);
+            }
+            45% {
+                opacity: 0.55;
+                filter: blur(4px);
+            }
+            100% {
+                opacity: 1;
+                filter: blur(0);
+            }
         }
 
         .page-two .fixed-foreground {
