@@ -91,7 +91,7 @@
 
         .page-two.page-visible {
             display: block;
-            animation: pageTwoReveal 1.25s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+            animation: pageTwoReveal 1.25s ease both;
         }
 
         @keyframes coverCinematicExit {
@@ -145,9 +145,17 @@
         @keyframes pageTwoReveal {
             0% {
                 opacity: 0;
-                transform: scale(1.045);
                 filter: blur(9px);
             }
+            45% {
+                opacity: 0.55;
+                filter: blur(4px);
+            }
+            100% {
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
             45% {
                 opacity: 0.55;
                 transform: scale(1.018);
@@ -357,6 +365,23 @@
             height: 100vh !important;
             z-index: 10 !important;
             pointer-events: none !important;
+        }
+
+        /* FINAL FIX:
+           Never transform the Page 2 container itself.
+           This keeps position: fixed layers fixed to the viewport. */
+        .page-two,
+        .page-two.page-visible {
+            transform: none !important;
+            will-change: auto !important;
+        }
+
+        .page-two .fixed-background,
+        .page-two .fixed-foreground,
+        .page-two .page-effects {
+            position: fixed !important;
+            transform: none !important;
+            will-change: auto !important;
         }
 
         /* =========================================
