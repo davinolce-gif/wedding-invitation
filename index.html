@@ -304,6 +304,61 @@
         }
 
 
+
+        /* =========================================
+           PAGE 2 — RESTORE FIXED BACKGROUND
+           The background stays fixed while all Page 2
+           content scrolls over it.
+           ========================================= */
+
+        .page-two {
+            position: relative !important;
+            width: 100% !important;
+            min-height: 100vh !important;
+        }
+
+        .page-two .fixed-background {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            z-index: 1 !important;
+            pointer-events: none !important;
+            background-attachment: fixed !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .page-two .scrolling-content {
+            position: relative !important;
+            z-index: 2 !important;
+            width: 100% !important;
+        }
+
+        .page-two .fixed-foreground {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            z-index: 3 !important;
+            pointer-events: none !important;
+        }
+
+        .page-two .page-effects {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            z-index: 10 !important;
+            pointer-events: none !important;
+        }
+
         /* =========================================
            PHOTO VIEWER — MOBILE BUTTON POSITION
            Keep previous/next arrows centered vertically
