@@ -1,209 +1,1279 @@
 <!DOCTYPE html>
 <html lang="km">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation</title>
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="invitation.css">
+
+    <!-- =========================================
+         COMBINED SINGLE-PAGE OVERRIDES
+         ========================================= -->
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        .page-one {
+            display: block;
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            opacity: 1;
+            transform: scale(1);
+            z-index: 100;
+        }
+
+        .page-one.page-transition {
+            animation: combinedPageFadeOut 0.8s ease forwards;
+        }
+
+        .page-one.page-hidden {
+            display: none !important;
+        }
+
+        .page-two {
+            display: none;
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .page-two.page-visible {
+            display: block;
+            animation: combinedPageFadeIn 0.8s ease;
+        }
+
+        @keyframes combinedPageFadeOut {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.08);
+            }
+        }
+
+        @keyframes combinedPageFadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(1.03);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .music-button {
+            position: fixed;
+            right: 18px;
+            top: 18px;
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+            font-size: 22px;
+            line-height: 45px;
+            padding: 0;
+            cursor: pointer;
+            z-index: 999999;
+        }
+
+        .music-button:active {
+            transform: scale(0.92);
+        }
+
+        /* Keep the fullscreen photo viewer above everything. */
+        .photo-viewer {
+            z-index: 99999 !important;
+        }
+
+        @media (max-width: 600px) {
+            .music-button {
+                right: 12px;
+                top: 12px;
+                width: 42px;
+                height: 42px;
+                line-height: 42px;
+                font-size: 20px;
+            }
+        }
+    </style>
 
 </head>
-
 
 <body>
 
     <!-- =========================================
-         WEDDING COVER
+         PAGE 1 — WEDDING COVER
          ========================================= -->
+    <section id="pageOne" class="page-one">
+        <main class="cover-page">
 
-    <main class="cover-page">
+            <img
+                id="guestCover"
+                class="cover-image"
+                src="covers/guest1.png"
+                alt="Wedding Invitation"
+            >
 
+            <img src="effects/butterfly.gif"
+                 class="flying-butterfly butterfly-1"
+                 alt="" aria-hidden="true">
 
-        <!-- =====================================
-             CANVA COVER
-             ===================================== -->
+            <img src="effects/butterfly.gif"
+                 class="flying-butterfly butterfly-2"
+                 alt="" aria-hidden="true">
 
-        <img
-            id="guestCover"
-            class="cover-image"
-            src="covers/guest1.png"
-            alt="Wedding Invitation"
-        >
+            <img src="effects/butterfly.gif"
+                 class="flying-butterfly butterfly-3"
+                 alt="" aria-hidden="true">
 
+            <img src="effects/butterfly.gif"
+                 class="flying-butterfly butterfly-4"
+                 alt="" aria-hidden="true">
 
-        <!-- =====================================
-             FLYING BUTTERFLY 1
-             ===================================== -->
+            <img src="effects/petal.png"
+                 class="falling-petal petal-1"
+                 alt="" aria-hidden="true">
 
-        <img
-            src="effects/butterfly.gif"
-            class="flying-butterfly butterfly-1"
-            alt=""
-            aria-hidden="true"
-        >
+            <img src="effects/petal.png"
+                 class="falling-petal petal-2"
+                 alt="" aria-hidden="true">
 
+            <img src="effects/petal.png"
+                 class="falling-petal petal-3"
+                 alt="" aria-hidden="true">
 
-        <!-- =====================================
-             FLYING BUTTERFLY 2
-             ===================================== -->
+            <img src="effects/petal.png"
+                 class="falling-petal petal-4"
+                 alt="" aria-hidden="true">
 
-        <img
-            src="effects/butterfly.gif"
-            class="flying-butterfly butterfly-2"
-            alt=""
-            aria-hidden="true"
-        >
-                <!-- =====================================
-             FLYING BUTTERFLY 3
-             ===================================== -->
+            <img src="effects/petal.png"
+                 class="falling-petal petal-5"
+                 alt="" aria-hidden="true">
 
-        <img
-            src="effects/butterfly.gif"
-            class="flying-butterfly butterfly-3"
-            alt=""
-            aria-hidden="true"
-        >
+            <img src="effects/petal.png"
+                 class="falling-petal petal-6"
+                 alt="" aria-hidden="true">
 
-        <!-- =====================================
-             FLYING BUTTERFLY 4
-             ===================================== -->
+            <img src="effects/petal.png"
+                 class="falling-petal petal-7"
+                 alt="" aria-hidden="true">
 
-        <img
-            src="effects/butterfly.gif"
-            class="flying-butterfly butterfly-4"
-            alt=""
-            aria-hidden="true"
-        >
+            <img src="effects/petal.png"
+                 class="falling-petal petal-8"
+                 alt="" aria-hidden="true">
 
+            <a href="#pageTwo"
+               class="open-invitation"
+               aria-label="បើកលិខិតអញ្ជើញ"
+               onclick="openInvitation(event)">
+            </a>
 
-        <!-- =====================================
-             FALLING PETALS
-             ===================================== -->
-
-        <img
-            src="effects/petal.png"
-            class="falling-petal petal-1"
-            alt=""
-            aria-hidden="true"
-        >
-
-        <img
-            src="effects/petal.png"
-            class="falling-petal petal-2"
-            alt=""
-            aria-hidden="true"
-        >
-
-        <img
-            src="effects/petal.png"
-            class="falling-petal petal-3"
-            alt=""
-            aria-hidden="true"
-        >
-
-        <img
-            src="effects/petal.png"
-            class="falling-petal petal-4"
-            alt=""
-            aria-hidden="true"
-        >
-
-        <img
-            src="effects/petal.png"
-            class="falling-petal petal-5"
-            alt=""
-            aria-hidden="true"
-        >
-
-        <img
-            src="effects/petal.png"
-            class="falling-petal petal-6"
-            alt=""
-            aria-hidden="true"
-        >
-
-         <img
-            src="effects/petal.png"
-            class="falling-petal petal-7"
-            alt=""
-            aria-hidden="true"
-        >
-
-                 <img
-            src="effects/petal.png"
-            class="falling-petal petal-8"
-            alt=""
-            aria-hidden="true"
-        >
-        
-        <!-- =====================================
-             OPEN INVITATION BUTTON
-             ===================================== -->
-
-       <a href="invitation.html"
-   class="open-invitation"
-   aria-label="បើកលិខិតអញ្ជើញ"
-   onclick="startPageTransition(event)">
-</a>
-
-
-    </main>
-
+        </main>
+    </section>
 
     <!-- =========================================
-         GUEST SELECTION
+         PAGE 2 — INVITATION
          ========================================= -->
-
-   <script>
-
-const params = new URLSearchParams(
-    window.location.search
-);
-
-const guest = params.get("guest");
+    <section id="pageTwo" class="page-two">
 
 
-if (guest) {
 
-    const guestCover =
-        document.getElementById("guestCover");
 
-    guestCover.src =
-        "covers/" + encodeURIComponent(guest) + ".png";
 
-}
 
-</script>
+    <!-- ==================================================
+
+         FIXED BUTTERFLY + PETAL EFFECTS
+
+         ================================================== -->
+
+
+
+    <div class="page-effects">
+
+
+
+
+
+        <!-- ==========================
+
+             4 BUTTERFLIES
+
+             ========================== -->
+
+
+
+        <img
+
+            src="effects/butterfly.gif"
+
+            class="page-butterfly butterfly-1"
+
+            alt=""
+
+        >
+
+
+
+        <img
+
+            src="effects/butterfly.gif"
+
+            class="page-butterfly butterfly-2"
+
+            alt=""
+
+        >
+
+
+
+        <img
+
+            src="effects/butterfly.gif"
+
+            class="page-butterfly butterfly-3"
+
+            alt=""
+
+        >
+
+
+
+        <img
+
+            src="effects/butterfly.gif"
+
+            class="page-butterfly butterfly-4"
+
+            alt=""
+
+        >
+
+
+
+
+
+        <!-- ==========================
+
+             8 FALLING PETALS
+
+             ========================== -->
+
+
+
+        <img
+
+            src="effects/petal.png"
+
+            class="page-petal petal-1"
+
+            alt=""
+
+        >
+
+
+
+        <img
+
+            src="effects/petal.png"
+
+            class="page-petal petal-2"
+
+            alt=""
+
+        >
+
+
+
+        <img
+
+            src="effects/petal.png"
+
+            class="page-petal petal-3"
+
+            alt=""
+
+        >
+
+
+
+        <img
+
+            src="effects/petal.png"
+
+            class="page-petal petal-4"
+
+            alt=""
+
+        >
+
+
+
+        <img
+
+            src="effects/petal.png"
+
+            class="page-petal petal-5"
+
+            alt=""
+
+        >
+
+
+
+        <img
+
+            src="effects/petal.png"
+
+            class="page-petal petal-6"
+
+            alt=""
+
+        >
+
+
+
+        <img
+
+            src="effects/petal.png"
+
+            class="page-petal petal-7"
+
+            alt=""
+
+        >
+
+
+
+        <img
+
+            src="effects/petal.png"
+
+            class="page-petal petal-8"
+
+            alt=""
+
+        >
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- ==================================================
+
+         FIXED BACKGROUND
+
+         ================================================== -->
+
+
+
+    <div class="fixed-background"></div>
+
+
+
+
+
+
+
+   
+
+
+
+    <!-- =========================================
+
+         PAGE 2 CONTENT
+
+         ========================================= -->
+
+
+
+    <main class="scrolling-content">
+
+
+
+        <img
+
+            src="page2-content.png"
+
+            class="page2-content"
+
+            alt=""
+
+        >
+
+
+
+
+
+        <!-- PRE-WEDDING PHOTOS -->
+
+
+
+        <section class="prewedding-section">
+
+
+
+            <!-- PHOTO 1 + PHOTO 2 -->
+
+            <div class="photo-row">
+
+
+
+                <img
+
+                    src="photos/photo1.jpg"
+
+                    class="gallery-photo"
+
+                    onclick="openPhoto(0)"
+
+                    alt="Photo 1"
+
+                >
+
+
+
+                <img
+
+                    src="photos/photo2.jpg"
+
+                    class="gallery-photo"
+
+                    onclick="openPhoto(1)"
+
+                    alt="Photo 2"
+
+                >
+
+
+
+            </div>
+
+
+
+
+
+            <!-- PHOTO 3 -->
+
+            <div class="photo-horizontal">
+
+
+
+                <img
+
+                    src="photos/photo3.jpg"
+
+                    class="gallery-photo"
+
+                    onclick="openPhoto(2)"
+
+                    alt="Photo 3"
+
+                >
+
+
+
+            </div>
+
+
+
+
+
+            <!-- PHOTO 4 + PHOTO 5 -->
+
+            <div class="photo-row">
+
+
+
+                <img
+
+                    src="photos/photo4.jpg"
+
+                    class="gallery-photo"
+
+                    onclick="openPhoto(3)"
+
+                    alt="Photo 4"
+
+                >
+
+
+
+                <img
+
+                    src="photos/photo5.jpg"
+
+                    class="gallery-photo"
+
+                    onclick="openPhoto(4)"
+
+                    alt="Photo 5"
+
+                >
+
+
+
+            </div>
+
+
+
+
+
+            <!-- PHOTO 6 -->
+
+            <div class="photo-horizontal">
+
+
+
+                <img
+
+                    src="photos/photo6.jpg"
+
+                    class="gallery-photo"
+
+                    onclick="openPhoto(5)"
+
+                    alt="Photo 6"
+
+                >
+
+
+
+            </div>
+
+
+
+
+
+            <!-- PHOTO 7 + PHOTO 8 -->
+
+            <div class="photo-row">
+
+
+
+                <img
+
+                    src="photos/photo7.jpg"
+
+                    class="gallery-photo"
+
+                    onclick="openPhoto(6)"
+
+                    alt="Photo 7"
+
+                >
+
+
+
+                <img
+
+                    src="photos/photo8.jpg"
+
+                    class="gallery-photo"
+
+                    onclick="openPhoto(7)"
+
+                    alt="Photo 8"
+
+                >
+
+
+
+            </div>
+
+
+
+
+
+            <!-- PHOTO 9 -->
+
+            <div class="photo-horizontal">
+
+
+
+                <img
+
+                    src="photos/photo9.jpg"
+
+                    class="gallery-photo"
+
+                    onclick="openPhoto(8)"
+
+                    alt="Photo 9"
+
+                >
+
+
+
+            </div>
+
+
+
+
+
+            <!-- PHOTO 10 + PHOTO 11 -->
+
+            <div class="photo-row">
+
+
+
+                <img
+
+                    src="photos/photo10.jpg"
+
+                    class="gallery-photo"
+
+                    onclick="openPhoto(9)"
+
+                    alt="Photo 10"
+
+                >
+
+
+
+                <img
+
+                    src="photos/photo11.jpg"
+
+                    class="gallery-photo"
+
+                    onclick="openPhoto(10)"
+
+                    alt="Photo 11"
+
+                >
+
+
+
+            </div>
+
+
+
+        </section>
+
+
+
+<!-- =========================================
+
+     LAST CANVA PAGE — CLICKABLE QR CODES
+
+     ========================================= -->
+
+
+
+<div class="last-canva-page">
+
+
+
+    <img
+
+        src="after-prewedding.png"
+
+        class="page2-content"
+
+        alt="Wedding location and ABA payment information"
+
+    >
+
+
+
+    <!-- GOOGLE MAPS QR -->
+
+    <a
+
+        href="https://maps.app.goo.gl/H5Hb852mRpkRx8Y88?g_st=it"
+
+        class="qr-link qr-map"
+
+        target="_blank"
+
+        rel="noopener noreferrer"
+
+        aria-label="Open wedding location in Google Maps"
+
+    ></a>
+
+
+
+    <!-- DAVIN ABA QR -->
+
+    <a
+
+        href="https://pay.ababank.com/oRF8/c28393r8"
+
+        class="qr-link qr-davin"
+
+        target="_blank"
+
+        rel="noopener noreferrer"
+
+        aria-label="Open Davin ABA payment"
+
+    ></a>
+
+
+
+    <!-- SIVMEY ABA QR -->
+
+    <a
+
+        href="https://pay.ababank.com/oRF8/p6npyts0"
+
+        class="qr-link qr-sivmey"
+
+        target="_blank"
+
+        rel="noopener noreferrer"
+
+        aria-label="Open Sivmey ABA payment"
+
+    ></a>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+    </main>
+
+
+
+
+
+    <!-- =========================================
+
+         FULL SCREEN PHOTO PREVIEW
+
+         ========================================= -->
+
+
+
+    <div id="photoViewer" class="photo-viewer">
+
+
+
+        <button
+
+            type="button"
+
+            class="photo-close"
+
+            onclick="closePhoto()"
+
+        >
+
+            ×
+
+        </button>
+
+
+
+        <button
+
+            type="button"
+
+            class="photo-prev"
+
+            onclick="previousPhoto()"
+
+        >
+
+            ‹
+
+        </button>
+
+
+
+        <img
+
+            id="largePhoto"
+
+            class="large-photo"
+
+            src=""
+
+            alt="Pre-wedding photo"
+
+        >
+
+
+
+        <button
+
+            type="button"
+
+            class="photo-next"
+
+            onclick="nextPhoto()"
+
+        >
+
+            ›
+
+        </button>
+
+
+
+    </div>
+
+
+
+
+
+    <!-- =========================================
+
+         FIXED BACKGROUND
+
+         ========================================= -->
+
+
+
+    
+
+
+
+
+
+    <!-- =========================================
+
+         FIXED FOREGROUND
+
+         ========================================= -->
+
+
+
+    <img
+
+        src="foreground.png"
+
+        class="fixed-foreground"
+
+        alt=""
+
+    >
+
+
+
+<section class="countdown-section">
+
+    <h2 class="countdown-title">រាប់ថយក្រោយដល់ថ្ងៃមង្គលការ</h2>
+
+
+
+    <div class="countdown">
+
+        <div class="countdown-box">
+
+            <span id="countdown-months">00</span>
+
+            <small>ខែ</small>
+
+        </div>
+
+
+
+        <div class="countdown-box">
+
+            <span id="countdown-days">00</span>
+
+            <small>ថ្ងៃ</small>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- =========================================
+
+         JAVASCRIPT
+
+         ========================================= -->
+
+
+
+    <script>
+
+
+
+    const weddingPhotos = [
+
+        "photos/photo1.jpg",
+
+        "photos/photo2.jpg",
+
+        "photos/photo3.jpg",
+
+        "photos/photo4.jpg",
+
+        "photos/photo5.jpg",
+
+        "photos/photo6.jpg",
+
+        "photos/photo7.jpg",
+
+        "photos/photo8.jpg",
+
+        "photos/photo9.jpg",
+
+        "photos/photo10.jpg",
+
+        "photos/photo11.jpg"
+
+    ];
+
+
+
+    let currentPhoto = 0;
+
+
+
+
+
+    function openPhoto(index) {
+
+
+
+        currentPhoto = index;
+
+
+
+        document.getElementById("largePhoto").src =
+
+            weddingPhotos[currentPhoto];
+
+
+
+        document
+
+            .getElementById("photoViewer")
+
+            .classList.add("show");
+
+
+
+        document.body.style.overflow = "hidden";
+
+    }
+
+
+
+
+
+    function closePhoto() {
+
+
+
+        document
+
+            .getElementById("photoViewer")
+
+            .classList.remove("show");
+
+
+
+        document.body.style.overflow = "";
+
+
+
+        document.getElementById("largePhoto").src = "";
+
+    }
+
+
+
+
+
+    function nextPhoto() {
+
+
+
+        currentPhoto++;
+
+
+
+        if (currentPhoto >= weddingPhotos.length) {
+
+            currentPhoto = 0;
+
+        }
+
+
+
+        document.getElementById("largePhoto").src =
+
+            weddingPhotos[currentPhoto];
+
+    }
+
+
+
+
+
+    function previousPhoto() {
+
+
+
+        currentPhoto--;
+
+
+
+        if (currentPhoto < 0) {
+
+            currentPhoto = weddingPhotos.length - 1;
+
+        }
+
+
+
+        document.getElementById("largePhoto").src =
+
+            weddingPhotos[currentPhoto];
+
+    }
+
+
+
+
+
+    document.addEventListener("keydown", function(event) {
+
+
+
+        const viewer =
+
+            document.getElementById("photoViewer");
+
+
+
+        if (!viewer.classList.contains("show")) {
+
+            return;
+
+        }
+
+
+
+        if (event.key === "Escape") {
+
+            closePhoto();
+
+        }
+
+
+
+        if (event.key === "ArrowLeft") {
+
+            previousPhoto();
+
+        }
+
+
+
+        if (event.key === "ArrowRight") {
+
+            nextPhoto();
+
+        }
+
+
+
+    });
+
+
+
+    </script>
 
 <script>
 
-function startPageTransition(event) {
+const weddingDate = new Date("2026-12-16T00:00:00+07:00");
 
-    event.preventDefault();
 
-    const link = event.currentTarget;
 
-    document.body.classList.add("page-transition");
+function updateCountdown() {
 
-    setTimeout(function() {
 
-        window.location.href = link.href;
 
-    }, 800);
+    const now = new Date();
+
+
+
+    if (now >= weddingDate) {
+
+        document.getElementById("countdown-months").textContent = "00";
+
+        document.getElementById("countdown-days").textContent = "00";
+
+        return;
+
+    }
+
+
+
+    let months =
+
+        (weddingDate.getFullYear() - now.getFullYear()) * 12 +
+
+        (weddingDate.getMonth() - now.getMonth());
+
+
+
+    let monthDate = new Date(now);
+
+
+
+    monthDate.setMonth(monthDate.getMonth() + months);
+
+
+
+    if (monthDate > weddingDate) {
+
+        months--;
+
+
+
+        monthDate = new Date(now);
+
+        monthDate.setMonth(monthDate.getMonth() + months);
+
+    }
+
+
+
+    const remaining = weddingDate - monthDate.getTime();
+
+
+
+    const days = Math.floor(
+
+        remaining / (1000 * 60 * 60 * 24)
+
+    );
+
+
+
+    document.getElementById("countdown-months").textContent =
+
+        String(months).padStart(2, "0");
+
+
+
+    document.getElementById("countdown-days").textContent =
+
+        String(days).padStart(2, "0");
 
 }
 
-</script>
-</body>
 
+
+updateCountdown();
+
+
+
+setInterval(updateCountdown, 60000);
+
+</script>
+
+
+
+
+    </section>
+
+    <!-- =========================================
+         CONTINUOUS WEDDING MUSIC
+         Put your music file at: music/wedding.mp3
+         ========================================= -->
+    <audio id="weddingMusic" loop preload="auto">
+        <source src="music/wedding.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicButton"
+            class="music-button"
+            type="button"
+            onclick="toggleMusic()"
+            aria-label="Play or pause wedding music">
+        🎵
+    </button>
+
+    <!-- =========================================
+         COMBINED PAGE JAVASCRIPT
+         ========================================= -->
+    <script>
+        // Guest cover: ?guest=John loads covers/John.png
+        const params = new URLSearchParams(window.location.search);
+        const guest = params.get("guest");
+
+        if (guest) {
+            const guestCover = document.getElementById("guestCover");
+            guestCover.src = "covers/" + encodeURIComponent(guest) + ".png";
+        }
+
+        // Page 1 -> Page 2, without loading another HTML file.
+        function openInvitation(event) {
+            event.preventDefault();
+
+            const pageOne = document.getElementById("pageOne");
+            const pageTwo = document.getElementById("pageTwo");
+            const music = document.getElementById("weddingMusic");
+            const musicButton = document.getElementById("musicButton");
+
+            // Because this function runs from the user's tap/click,
+            // browsers normally allow audio playback here.
+            music.play().then(function () {
+                musicButton.textContent = "🔊";
+            }).catch(function () {
+                // Autoplay may still be blocked by some browsers.
+                musicButton.textContent = "🎵";
+            });
+
+            pageOne.classList.add("page-transition");
+
+            setTimeout(function () {
+                pageOne.classList.add("page-hidden");
+                pageTwo.classList.add("page-visible");
+                window.scrollTo({ top: 0, behavior: "instant" });
+            }, 800);
+        }
+
+        function toggleMusic() {
+            const music = document.getElementById("weddingMusic");
+            const button = document.getElementById("musicButton");
+
+            if (music.paused) {
+                music.play().then(function () {
+                    button.textContent = "🔊";
+                }).catch(function () {
+                    button.textContent = "🎵";
+                });
+            } else {
+                music.pause();
+                button.textContent = "🎵";
+            }
+        }
+    </script>
+
+</body>
 </html>
